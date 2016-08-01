@@ -1,0 +1,19 @@
+#!/bin/bash
+
+pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
+id -u icpc >/dev/null 2>/dev/null
+if [ $? != 0 ]; then
+  useradd -d /home/icpc -k /etc/skel -m -p "$pass" -s /bin/bash -g users icpc
+else
+  if getent group sudo|grep -q "\<icpc\>"; then
+    echo "Ops. Usuário ICPC com privilégios administrativos. ABORTANDO"
+    echo "   Remova o usuário ICPC do grupo sudo"
+    exit 1
+  fi
+  usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
+  echo "user icpc already exists"
+fi
+
+if ! grep -q "^icpc " /etc/security/limits.conf; then
+  echo "icpc          hard nproc 1024" >> /etc/security/limits.conf
+fi
