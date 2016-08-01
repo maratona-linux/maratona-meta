@@ -1,4 +1,4 @@
-=Maratona Linux=
+#Maratona Linux
 
 Este repositório trata dos pacotes gerados para o PPA do Maratona Linux.
 
@@ -8,7 +8,7 @@ instalação padrão do ubuntu em Maratona Linux.
 Esta modificação do Ubuntu é utilizada como ambiente de programação oficial
 dos competidores da Maratona de Programação no Brasil.
 
-=Instalação=
+#Instalação
 
 Todos os pacotes estão disponíveis no PPA:
 https://launchpad.net/~brunoribas/+archive/ubuntu/ppa-maratona
@@ -28,6 +28,6 @@ maratona-desktop-virtual com o comando:
 sudo apt-get install maratona-desktop-virtual
 ```
 
-=Compilando os pacotes=
+#Compilando os pacotes
 
 WIP
