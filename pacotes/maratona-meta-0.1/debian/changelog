@@ -1,0 +1,25 @@
+maratona-meta (0.1-4) xenial; urgency=medium
+
+  * Adicionado pacote maratona-firewall ao maratona-meta
+  * Removido pacote maratona-backgroud de maratona-meta, agora é feito em
+    * build separado
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sun, 31 Jul 2016 21:20:46 -0300
+
+maratona-meta (0.1-3) xenial; urgency=medium
+
+  * Corrigido pequenos bugs na instalação
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sat, 30 Jul 2016 14:33:55 -0300
+
+maratona-meta (0.1-2) xenial; urgency=medium
+
+  * Atualizado dependencia de maratona-essential para * maratona-linguagens-doc
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sat, 30 Jul 2016 10:22:43 -0300
+
+maratona-meta (0.1-1) xenial; urgency=medium
+
+  * Initial release
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Fri, 29 Jul 2016 22:09:21 -0300

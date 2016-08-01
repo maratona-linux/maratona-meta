@@ -1,0 +1,109 @@
+Source: maratona-meta
+Section: metapackages
+Priority: optional
+Maintainer: Bruno Ribas <brunoribas@utfpr.edu.br>
+Build-Depends: debhelper
+
+Package: maratona-desktop-virtual
+Architecture: all
+Conflicts: libreoffice-core, thunderbird, unity-webapps-common
+Depends: maratona-desktop, maratona-virtual-minimal
+Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux para máquina virtual
+
+Package: maratona-desktop
+Architecture: all
+Conflicts: libreoffice-core, thunderbird, unity-webapps-common
+Pre-Depends: maratona-essential
+Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall
+Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
+ Este pacote detém todas as dependências obrigatórias para transformar o
+ ubuntu em uma versão controlada do ambiente da maratona.
+ .
+ Tenha cuidado ao instalar este pacote. Recomenda-se que seja instalado
+ apenas nas máquinas que serão utilizadas na competição.
+
+Package: maratona-conflitos
+Architecture: all
+Conflicts: libreoffice-core, thunderbird, unity-webapps-common
+Description: Pacote do Maraton Linux com os conflitos para a maratona
+ Este pacote além de remover alguns pacotes desnecessários para a maratona
+ também desabilita o funcionamento do:
+  - Unity Lenses;
+  - Acesso a usuário guest
+
+Package: maratona-virtual-minimal
+Architecture: all
+Depends: virtualbox-guest-dkms, virtualbox-guest-x11
+Description: Pacote Virtual com as dependências para rodar dentro do VirtualBox
+
+Package: maratona-essential
+Architecture: all
+Depends: maratona-linguagens, maratona-editores, maratona-linguagens-doc
+Description: Pacote Virtual com as dependências mínimas para o ambiente maratona
+ Este pacote tem como dependência os pacotes com as linguagens, editores e
+ documentação que podem ser utilizados na maratona.
+ .
+ É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
+
+
+Package: maratona-linguagens
+Architecture: all
+Depends: build-essential, default-jre, default-jdk, fpc, libstdc++6-4.7-dev, libstdc++6-4.7-dbg, gdb, python3
+Description: Pacote com os compiladores das linguagens de programação
+ aceitas na maratona
+ .
+ É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
+
+Package: maratona-linguagens-doc
+Architecture: all
+Depends: manpages-dev, gcc-doc, stl-manual, c++-annotations, libstdc++6-4.7-doc, default-jdk-doc, python3-doc
+Description: Pacote contendo as dependências de documentação das linguagens
+ aceitas na maratona
+ .
+ É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
+
+Package: maratona-editores
+Architecture: all
+Depends: vim, vim-gnome, geany, geany-plugins, geany-plugin-addons, eclipse, eclipse-pde, eclipse-rcp, eclipse-platform, eclipse-jdt, eclipse-cdt, emacs, gedit, gedit-plugins, gedit-developer-plugins
+Description: Pacote Virtual do Maratona Linux com os editores permitidos
+ na maratona
+ .
+ É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
+
+Package: maratona-skel
+Pre-Depends: maratona-editores, maratona-linguagens-doc
+Depends: coreutils
+Architecture: all
+Description: Pacote que gera o skel personalizado para usuários Maratona Linux
+ Neste pacote são gerados os ícones padrões no desktop dos usuários que
+ serão adicionados. Os ícones gerados são:
+    - Javadoc
+    - stldoc
+    - cppannotations
+    - eclipse
+    - gedit
+    - emacs
+    - gnome-terminal
+
+Package: maratona-usuario-icpc
+Pre-Depends: maratona-skel, makepasswd
+Architecture: all
+Description: Pacote que cria um usuário icpc para o competidor da maratona
+ Este pacote cria o usuário sem privilégios administrativos para competição.
+ .
+ Também é fornecido neste pacote alguns comandos admnistrativos:
+   - zera-home-icpc : Apaga todos os arquivos do home do usuário icpc
+      + este script é utilizado após o warmup para o home do usuário
+      iniciar vazio durante a competição.
+
+Package: maratona-firewall
+Architecture: all
+Depends: iptables
+Description: Pacote que isola o competidor da rede.
+ Este pacote evita que pacotes de rede entrem e saiam do maratona-linux,
+ exceto pelo acesso ao servidor BOCA.
+ .
+ Os comandos disponibilizados neste pacote, são:
+  - ip-servidor-boca
+  - habilita-firewall
+  - desabilita-firewall

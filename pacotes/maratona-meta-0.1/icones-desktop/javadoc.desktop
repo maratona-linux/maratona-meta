@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1
+Name=Java API
+Comment=Java API
+Exec=firefox /usr/share/doc/openjdk-7-jre-headless/api/index.html
+Terminal=false
+Type=Application

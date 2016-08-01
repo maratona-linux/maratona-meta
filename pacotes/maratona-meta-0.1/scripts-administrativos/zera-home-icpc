@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if ! whoami|grep -q root; then
+  echo "Este comando deve ser executado com privilégios de ROOT."
+  echo "Considere colocar o comando \"sudo\" a frente da chamada."
+  echo
+  echo "Uso: sudo $0"
+  exit 1
+fi
+
+printf "Verificando existência do usuário \"icpc\""
+getent passwd icpc &>/dev/null
+RESP="$?"
+if ((RESP != 0 )); then
+  echo ". falhou"
+  echo "abortando".
+  exit 1
+fi
+echo "."
+
+printf "Recriando diretório home"
+rm -rf ~icpc
+cp -a /etc/skel ~icpc
+chown -R icpc:users ~icpc
+echo "."
+echo
+echo "Tudo feito. Considere um reboot para que os diretórios temporários e"
+echo "tmpfs sejam limpos"
+
+exit 0
