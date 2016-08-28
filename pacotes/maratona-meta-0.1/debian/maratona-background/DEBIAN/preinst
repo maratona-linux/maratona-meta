@@ -1,5 +1,0 @@
-#!/bin/bash
-
-dpkg-divert --divert /usr/share/backgrounds/warty-final-ubuntu.png.orig \
-            --rename /usr/share/backgrounds/warty-final-ubuntu.png
-
