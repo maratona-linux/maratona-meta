@@ -6,13 +6,6 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-usuario-icpc/usr/sbin/
 	cp scripts-administrativos/zera-home-icpc debian/maratona-usuario-icpc/usr/sbin/
 	chmod a+x debian/maratona-usuario-icpc/usr/sbin/zera-home-icpc
-	mkdir -p debian/maratona-firewall/usr/sbin/
-	cp scripts-administrativos/config-ip-boca.sh debian/maratona-firewall/usr/sbin/config-ip-boca
-	chmod a+x debian/maratona-firewall/usr/sbin/config-ip-boca
-	cp scripts-administrativos/firewall.sh debian/maratona-firewall/usr/sbin/habilita-firewall
-	chmod a+x debian/maratona-firewall/usr/sbin/habilita-firewall
-	cp scripts-administrativos/firewall-stop.sh debian/maratona-firewall/usr/sbin/desabilita-firewall
-	chmod a+x debian/maratona-firewall/usr/sbin/desabilita-firewall
 
 
 %:

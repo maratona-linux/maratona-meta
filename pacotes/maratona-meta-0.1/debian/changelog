@@ -1,3 +1,15 @@
+maratona-meta (0.1-6) xenial; urgency=medium
+
+  * Pacote maratona-firewall fica separado do maratona-meta
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sun, 25 Aug 2016 14:50:17 -0300
+
+maratona-meta (0.1-5) xenial; urgency=medium
+
+  * Depende do pacote maratona-submission
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sun, 21 Aug 2016 21:20:46 -0300
+
 maratona-meta (0.1-4) xenial; urgency=medium
 
   * Adicionado pacote maratona-firewall ao maratona-meta

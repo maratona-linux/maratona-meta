@@ -14,7 +14,7 @@ Package: maratona-desktop
 Architecture: all
 Conflicts: libreoffice-core, thunderbird, unity-webapps-common
 Pre-Depends: maratona-essential
-Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall
+Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall, maratona-submission
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
  ubuntu em uma versão controlada do ambiente da maratona.
@@ -96,14 +96,3 @@ Description: Pacote que cria um usuário icpc para o competidor da maratona
       + este script é utilizado após o warmup para o home do usuário
       iniciar vazio durante a competição.
 
-Package: maratona-firewall
-Architecture: all
-Depends: iptables
-Description: Pacote que isola o competidor da rede.
- Este pacote evita que pacotes de rede entrem e saiam do maratona-linux,
- exceto pelo acesso ao servidor BOCA.
- .
- Os comandos disponibilizados neste pacote, são:
-  - ip-servidor-boca
-  - habilita-firewall
-  - desabilita-firewall
