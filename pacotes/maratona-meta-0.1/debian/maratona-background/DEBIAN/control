@@ -1,9 +1,0 @@
-Package: maratona-background
-Source: maratona-meta
-Version: 0.1-3
-Architecture: all
-Maintainer: Bruno Ribas <brunoribas@utfpr.edu.br>
-Installed-Size: 3536
-Section: metapackages
-Priority: optional
-Description: Pacote com o background atualizado da Maratona
