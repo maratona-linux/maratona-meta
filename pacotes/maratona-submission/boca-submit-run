@@ -6,6 +6,13 @@ if [[ ! -e /etc/bocaip ]] ; then
   exit 1
 fi
 
+#Check if this script is running in a user in sudo group or root
+if groups | egrep -q "(sudo|root)" ; then
+  echo "Este script deve ser executado por um usuário normal"
+  echo "Na Maratona este usuário, geralmente, é o 'icpc'"
+  exit 1
+fi
+
 source /etc/bocaip
 BOCASERVER=$BOCAIP
 
