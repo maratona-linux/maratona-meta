@@ -1,3 +1,9 @@
+maratona-meta (2016.1-8) xenial; urgency=medium
+
+  * Adiciona link para o geany
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sun, 03 Sep 2016 16:51:33 -0300
+
 maratona-meta (2016.1-7) xenial; urgency=medium
 
   * Arruma modelo de versionamento para igualar aos outros pacotes
