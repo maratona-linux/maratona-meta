@@ -35,7 +35,7 @@ if (( RESP == 0 )) || (( RESP == 1 )); then
   if grep -q "\<boca-competidor$" /etc/hosts; then
     sed -i "/boca-competidor$/d" /etc/hosts
   fi
-  printf "$IP\tboca\tboca-competidor\n" >> /etc/hosts
+  printf "$IP\tbombonera.org boca boca-competidor\n" >> /etc/hosts
   printf "IP Adicionado com sucesso\n"
   exit 0
 
