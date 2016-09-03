@@ -23,6 +23,10 @@ rm -rf ~icpc
 cp -a /etc/skel ~icpc
 chown -R icpc:users ~icpc
 echo "."
+printf "Restaurando senha"
+pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
+usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
+echo "."
 echo
 echo "Tudo feito. Considere um reboot para que os diretórios temporários e"
 echo "tmpfs sejam limpos"
