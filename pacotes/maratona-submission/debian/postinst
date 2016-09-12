@@ -1,7 +1,0 @@
-#!/bin/bash
-
-#Garantir que está com suid.
-chmod 4555 /usr/bin/boca-submit-run-root-wrapper
-
-#Colocar a Bombonera como o BOCA
-/usr/sbin/config-ip-boca 50.116.19.221 -f
