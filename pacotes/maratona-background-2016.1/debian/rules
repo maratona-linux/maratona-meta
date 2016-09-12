@@ -1,9 +1,0 @@
-#! /usr/bin/make -f
-
-override_dh_auto_install:
-	mkdir -p debian/maratona-background/usr/share/backgrounds/
-	cp maratona-background2016.png debian/maratona-background/usr/share/backgrounds/
-	cp maratona-background2016.png debian/maratona-background/usr/share/backgrounds/warty-final-ubuntu.png
-
-%:
-	dh $@

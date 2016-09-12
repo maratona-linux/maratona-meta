@@ -1,6 +1,0 @@
-#!/bin/bash
-
-if ! grep -q "habilita-firewall" /etc/rc.local; then
-  sed -i '/^exit 0/i \
-bash \/usr\/sbin\/habilita-firewall' /etc/rc.local
-fi
