@@ -1,3 +1,10 @@
+maratona-meta (2016.1-9) xenial; urgency=medium
+
+  * Navegador do usuário 'icpc' abre no boca direto
+  * Adicionado dependência do pyflakes3 e pyflakes
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sun, 04 Sep 2016 22:37:12 -0300
+
 maratona-meta (2016.1-8) xenial; urgency=medium
 
   * Adiciona link para o geany
