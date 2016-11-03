@@ -1,12 +1,14 @@
 #Maratona Linux
 
-Este repositório trata dos pacotes gerados para o PPA do Maratona Linux.
+Este repositório trata do pacote maratona-meta do Maratona Linux.
 
 O Maratona Linux é constituído por um conjunto de pacotes que modificam uma
 instalação padrão do ubuntu em Maratona Linux.
 
 Esta modificação do Ubuntu é utilizada como ambiente de programação oficial
 dos competidores da Maratona de Programação no Brasil.
+
+Este pacote é a base para a instalação completa do Maratona Linux.
 
 #Instalação
 
@@ -28,6 +30,7 @@ maratona-desktop-virtual com o comando:
 sudo apt-get install maratona-desktop-virtual
 ```
 
-#Compilando os pacotes
+#TODO
 
-WIP
+Alguns pacotes gerados aqui não são meta, devem ser separados para ficar em
+outro repositório.
