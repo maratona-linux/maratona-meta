@@ -1,3 +1,12 @@
+maratona-meta (2016.1-10) xenial; urgency=medium
+
+  * Add python2-doc
+  * Add python2 as language
+  * Remove Pascal dependency
+  * maratona-skel: Better Firefox link to BOCA
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Thu, 03 Nov 2016 16:39:45 -0200
+
 maratona-meta (2016.1-9) xenial; urgency=medium
 
   * Navegador do usuário 'icpc' abre no boca direto
