@@ -18,6 +18,12 @@ if ((RESP != 0 )); then
 fi
 echo "."
 
+for i in media mnt var opt tmp usr; do
+  printf "Removing files from: /$i"
+  find /$i -user icpc -delete
+  echo '.'
+done
+
 printf "Recriando diretório home"
 rm -rf ~icpc
 cp -a /etc/skel ~icpc
