@@ -1,4 +1,4 @@
-#Maratona Linux
+# Maratona Linux
 
 Este repositório trata do pacote maratona-meta do Maratona Linux.
 
@@ -10,7 +10,7 @@ dos competidores da Maratona de Programação no Brasil.
 
 Este pacote é a base para a instalação completa do Maratona Linux.
 
-#Instalação
+# Instalação
 
 Todos os pacotes estão disponíveis no PPA:
 https://launchpad.net/~brunoribas/+archive/ubuntu/ppa-maratona
@@ -32,7 +32,7 @@ maratona-desktop-virtual com o comando:
 sudo apt-get install maratona-desktop-virtual
 ```
 
-#TODO
+# TODO
 
 Alguns pacotes gerados aqui não são meta, devem ser separados para ficar em
 outro repositório.
