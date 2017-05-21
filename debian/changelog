@@ -1,3 +1,10 @@
+maratona-meta (2016.1-11) xenial; urgency=medium
+
+  * maratona-usuario-icpc: Removing files from icpc user in media mnt var
+  * opt tmp usr
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sun, 06 Nov 2016 21:50:50 -0200
+
 maratona-meta (2016.1-10) xenial; urgency=medium
 
   * Add python2-doc
