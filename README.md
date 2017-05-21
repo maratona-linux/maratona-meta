@@ -16,6 +16,8 @@ Todos os pacotes estão disponíveis no PPA:
 https://launchpad.net/~brunoribas/+archive/ubuntu/ppa-maratona
 
 Para instalar em um ubuntu basta:
+(caso add-apt-repository não esteja instalado, use
+sudo apt-get install software-properties-common python-software-properties)
 
 ```
 sudo add-apt-repository ppa:brunoribas/ppa-maratona
