@@ -33,7 +33,7 @@ Description: Pacote do Maraton Linux com os conflitos para a maratona
 
 Package: maratona-virtual-minimal
 Architecture: all
-Depends: virtualbox-guest-dkms, virtualbox-guest-x11
+Depends: virtualbox-guest-dkms
 Description: Pacote Virtual com as dependências para rodar dentro do VirtualBox
 
 Package: maratona-essential
