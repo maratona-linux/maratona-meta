@@ -1,3 +1,10 @@
+maratona-meta (2017-1) xenial; urgency=medium
+
+  * Update default firefox page to http://boca-competidor/boca
+  * Remove virtualbox-guest-x11 dependency
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sun, 18 Aug 2017 00:42:09 -0200
+
 maratona-meta (2016.1-11) xenial; urgency=medium
 
   * maratona-usuario-icpc: Removing files from icpc user in media mnt var
