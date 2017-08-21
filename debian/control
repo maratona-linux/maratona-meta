@@ -12,7 +12,7 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux para máqu
 
 Package: maratona-desktop
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common
+Conflicts: libreoffice-core, thunderbird, unity-webapps-common, boca
 Pre-Depends: maratona-essential
 Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall, maratona-submission
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
@@ -24,7 +24,7 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 
 Package: maratona-conflitos
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common
+Conflicts: libreoffice-core, thunderbird, unity-webapps-common, boca
 Description: Pacote do Maraton Linux com os conflitos para a maratona
  Este pacote além de remover alguns pacotes desnecessários para a maratona
  também desabilita o funcionamento do:
@@ -48,7 +48,7 @@ Description: Pacote Virtual com as dependências mínimas para o ambiente marato
 
 Package: maratona-linguagens
 Architecture: all
-Depends: build-essential, default-jre, default-jdk, libstdc++6-4.7-dev, libstdc++6-4.7-dbg, gdb, python3, pyflakes, pyflakes3, python
+Depends: build-essential, default-jre, default-jdk, libstdc++6-4.7-dev, libstdc++6-4.7-dbg, gdb, python3, pyflakes, pyflakes3, python, fpc-3.0.2
 Description: Pacote com os compiladores das linguagens de programação
  aceitas na maratona
  .
@@ -56,7 +56,7 @@ Description: Pacote com os compiladores das linguagens de programação
 
 Package: maratona-linguagens-doc
 Architecture: all
-Depends: manpages-dev, gcc-doc, stl-manual, c++-annotations, libstdc++6-4.7-doc, default-jdk-doc, python3-doc, python2.7-doc
+Depends: manpages-dev, gcc-doc, stl-manual, c++-annotations, libstdc++6-4.7-doc, default-jdk-doc, python3-doc, python2.7-doc, fp-docs-3.0.2
 Description: Pacote contendo as dependências de documentação das linguagens
  aceitas na maratona
  .
