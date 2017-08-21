@@ -1,3 +1,10 @@
+maratona-meta (2017-2) xenial; urgency=medium
+
+  * Conflicts with boca
+  * Added fpc dependency
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sun, 20 Aug 2017 22:53:19 -0300
+
 maratona-meta (2017-1) xenial; urgency=medium
 
   * Update default firefox page to http://boca-competidor/boca
