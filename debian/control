@@ -14,7 +14,7 @@ Package: maratona-desktop
 Architecture: all
 Conflicts: libreoffice-core, thunderbird, unity-webapps-common, boca, gnome-software
 Pre-Depends: maratona-essential
-Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall, maratona-submission
+Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall, maratona-submission, compiz, compizconfig-settings-manager, compiz-plugins-extra, compiz-plugins-main, compiz-plugins
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
  ubuntu em uma versão controlada do ambiente da maratona.
@@ -56,7 +56,7 @@ Description: Pacote com os compiladores das linguagens de programação
 
 Package: maratona-linguagens-doc
 Architecture: all
-Depends: manpages-dev, gcc-doc, stl-manual, c++-annotations, libstdc++6-4.7-doc, default-jdk-doc, python3-doc, python2.7-doc, fp-docs-3.0.0
+Depends: manpages-dev, gcc-doc, stl-manual, c++-annotations, libstdc++6-4.7-doc, default-jdk-doc, python3-doc, python2.7-doc, fp-docs-3.0.0, cppreference-doc-en-html
 Description: Pacote contendo as dependências de documentação das linguagens
  aceitas na maratona
  .
