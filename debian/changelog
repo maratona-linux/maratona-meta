@@ -1,3 +1,24 @@
+maratona-meta (2017-5) xenial; urgency=medium
+
+  * Added cppreference-doc-en-html to maratona-linguagens-doc
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Sat, 14 Oct 2017 10:30:10 -0300
+
+maratona-meta (2017-4) xenial; urgency=medium
+
+  * Conflicts with gnome-software
+  * Fix firefox.desktop
+   - now points to http://global.bomonera.org/boca
+  * Add Accessibility tools
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Thu, 31 Aug 2017 23:52:08 -0300
+
+maratona-meta (2017-3) xenial; urgency=medium
+
+  * Fix freepascal dependency
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Mon, 21 Aug 2017 15:55:53 -0300
+
 maratona-meta (2017-2) xenial; urgency=medium
 
   * Conflicts with boca
