@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1
+Name=C++ Reference
+Comment=C++ Reference
+Exec=firefox /usr/share/cppreference/doc/html/en/index.html
+Terminal=false
+Type=Application
