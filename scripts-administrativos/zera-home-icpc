@@ -8,6 +8,13 @@ if ! whoami|grep -q root; then
   exit 1
 fi
 
+if [[ ! -e "/home/icpc/.clean-home" ]] && [[ "$1" != "-f" ]]; then
+  echo "No /home/icpc/.clean-home file found"
+  echo "If you wish to clean anyway run:"
+  echo "  $0 -f"
+  exit 1
+fi
+
 printf "Verificando existência do usuário \"icpc\""
 getent passwd icpc &>/dev/null
 RESP="$?"
@@ -18,12 +25,6 @@ if ((RESP != 0 )); then
 fi
 echo "."
 
-for i in media mnt var opt tmp usr; do
-  printf "Removing files from: /$i"
-  find /$i -user icpc -delete
-  echo '.'
-done
-
 printf "Recriando diretório home"
 rm -rf ~icpc
 cp -a /etc/skel ~icpc
@@ -33,6 +34,12 @@ printf "Restaurando senha"
 pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
 usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
 echo "."
+
+for i in media mnt var opt tmp usr; do
+  printf "Removing files from: /$i"
+  find /$i -user icpc -delete
+  echo '.'
+done
 echo
 echo "Tudo feito. Considere um reboot para que os diretórios temporários e"
 echo "tmpfs sejam limpos"
