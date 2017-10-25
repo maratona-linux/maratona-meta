@@ -12,7 +12,7 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux para máqu
 
 Package: maratona-desktop
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common, boca, gnome-software
+Conflicts: libreoffice-core, thunderbird, unity-webapps-common, gnome-software
 Pre-Depends: maratona-essential
 Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall, maratona-submission, compiz, compizconfig-settings-manager, compiz-plugins-extra, compiz-plugins-main, compiz-plugins
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
@@ -24,7 +24,7 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 
 Package: maratona-conflitos
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common, boca, gnome-software
+Conflicts: libreoffice-core, thunderbird, unity-webapps-common, gnome-software
 Description: Pacote do Maraton Linux com os conflitos para a maratona
  Este pacote além de remover alguns pacotes desnecessários para a maratona
  também desabilita o funcionamento do:
