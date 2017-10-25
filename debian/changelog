@@ -1,3 +1,16 @@
+maratona-meta (2017-7) xenial; urgency=medium
+
+  * maratona-icpc change remove order from zera-home-icpc
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Mon, 23 Oct 2017 19:44:40 -0200
+
+maratona-meta (2017-6) xenial; urgency=medium
+
+  * maratona-editores now installs pycharm
+  * maratona-icpc provides script clean-icpc-on-reboot
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Mon, 23 Oct 2017 00:21:41 -0200
+
 maratona-meta (2017-5) xenial; urgency=medium
 
   * Added cppreference-doc-en-html to maratona-linguagens-doc
