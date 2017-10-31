@@ -1,3 +1,10 @@
+maratona-meta (2017-8) xenial; urgency=medium
+
+  * Remove conflict: boca
+  * Force UTC timezone
+
+ -- Bruno Ribas <brunoribas@utfpr.edu.br>  Wed, 25 Oct 2017 12:10:34 -0200
+
 maratona-meta (2017-7) xenial; urgency=medium
 
   * maratona-icpc change remove order from zera-home-icpc
