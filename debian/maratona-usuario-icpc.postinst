@@ -18,7 +18,10 @@ if ! grep -q "^icpc " /etc/security/limits.conf; then
   echo "icpc          hard nproc 1024" >> /etc/security/limits.conf
 fi
 
-if ! grep -q zera-home-icpc /etc/rc.local; then
+grep -v 'zera-home-icpc' /etc/rc.local > /tmp/t
+mv /tmp/t /etc/rc.local
+chmod a+x /etc/rc.local
+if ! grep -q zera-home-icpc /etc/rc.local | grep true; then
     sed -i '/^exit 0/i \
-bash \/usr\/sbin\/zera-home-icpc' /etc/rc.local
+bash \/usr\/sbin\/zera-home-icpc || true' /etc/rc.local
 fi
