@@ -12,7 +12,7 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux para máqu
 
 Package: maratona-desktop
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common, gnome-software
+Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
 Pre-Depends: maratona-essential
 Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall, maratona-submission, compiz, compizconfig-settings-manager, compiz-plugins-extra, compiz-plugins-main, compiz-plugins
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
