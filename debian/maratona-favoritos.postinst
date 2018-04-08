@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+
+# Faz copia dos atalhos instalados pelo o snap no maratona editores. Ja que esteve pacote tem como pre dependencias os pacotes dos editores.
+
+[ -f /var/lib/snapd/desktop/applications/intellij-idea-community_intellij-idea-community.desktop ] && cp /var/lib/snapd/desktop/applications/intellij-idea-community_intellij-idea-community.desktop /usr/share/applications/jetbrains-intellij-idea-ce.desktop
+
+[ -f /var/lib/snapd/desktop/applications/pycharm-community_pycharm-community.desktop ] && cp /var/lib/snapd/desktop/applications/pycharm-community_pycharm-community.desktop /usr/share/applications/jetbrains-pycharm-ce.desktop
+
+# Faz uma nova entrada no dconf para adicionar os atalhos favoritos
+mkdir -p /etc/dconf/profile/
+cat << EOF > /etc/dconf/profile/user
+user-db:user
+system-db:local
+EOF
+
+mkdir -p /etc/dconf/db/local.d
+cat << EOF > /etc/dconf/db/local.d/favoritos
+[org/gnome/shell]
+favorite-apps = ['eclipse.desktop', 'gedit.desktop', 'geany.desktop', 'emacs25.desktop', 'org.kde.kate.desktop', 'codeblocks.desktop', 'gnome-terminal.desktop', 'jetbrains-pycharm-ce.desktop', 'jetbrains-intellij-idea-ce.desktop']
+EOF
+
+dconf update

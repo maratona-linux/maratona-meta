@@ -14,7 +14,7 @@ Package: maratona-desktop
 Architecture: all
 Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
 Pre-Depends: maratona-essential
-Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall, maratona-submission, compiz, compizconfig-settings-manager, compiz-plugins-extra, compiz-plugins-main, compiz-plugins
+Depends: ssh, maratona-conflitos, maratona-background, maratona-favoritos, maratona-usuario-icpc, maratona-firewall, maratona-submission, compiz, compizconfig-settings-manager, compiz-plugins-extra, compiz-plugins-main, compiz-plugins
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
  ubuntu em uma versão controlada do ambiente da maratona.
@@ -68,23 +68,24 @@ Description: Pacote Virtual do Maratona Linux com os editores permitidos
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
 
-Package: maratona-skel
+Package: maratona-favoritos
 Pre-Depends: maratona-editores, maratona-linguagens-doc
 Depends: coreutils
 Architecture: all
-Description: Pacote que gera o skel personalizado para usuários Maratona Linux
- Neste pacote são gerados os ícones padrões no desktop dos usuários que
+Description: Pacote que gera a barra lateral personalizada para usuários Maratona Linux
+ Neste pacote são gerados os ícones padrões na barra lateral dos usuários que
  serão adicionados. Os ícones gerados são:
-    - Javadoc
-    - stldoc
-    - cppannotations
     - eclipse
     - gedit
     - emacs
     - gnome-terminal
+    - kate
+    - codeblocks
+    - Pycharm Community
+    - Intellij Idea Community
 
 Package: maratona-usuario-icpc
-Pre-Depends: maratona-skel, makepasswd
+Pre-Depends: maratona-favoritos, makepasswd
 Architecture: all
 Description: Pacote que cria um usuário icpc para o competidor da maratona
  Este pacote cria o usuário sem privilégios administrativos para competição.
