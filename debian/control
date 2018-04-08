@@ -24,11 +24,10 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 
 Package: maratona-conflitos
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common, gnome-software
+Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
 Description: Pacote do Maraton Linux com os conflitos para a maratona
  Este pacote além de remover alguns pacotes desnecessários para a maratona
  também desabilita o funcionamento do:
-  - Unity Lenses;
   - Acesso a usuário guest
 
 Package: maratona-virtual-minimal
@@ -44,7 +43,6 @@ Description: Pacote Virtual com as dependências mínimas para o ambiente marato
  documentação que podem ser utilizados na maratona.
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
-
 
 Package: maratona-linguagens
 Architecture: all

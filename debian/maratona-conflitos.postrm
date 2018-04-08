@@ -3,4 +3,4 @@
 #recolocando o autostart do update-notifier
 dpkg-divert --rename --remove /etc/xdg/autostart/update-notifier.desktop
 
-rm /etc/lightdm/lightdm.conf.d/10-maratona-login-spec.conf
+rm /etc/dconf/db/gdm.d/00-login-screen
