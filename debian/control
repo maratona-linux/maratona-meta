@@ -46,7 +46,7 @@ Description: Pacote Virtual com as dependências mínimas para o ambiente marato
 
 Package: maratona-linguagens
 Architecture: all
-Depends: build-essential, default-jre, default-jdk, libstdc++6-4.7-dev, libstdc++6-4.7-dbg, gdb, python3, pyflakes, pyflakes3, python, fpc-3.0.0
+Depends: build-essential, default-jre, default-jdk, libstdc++-7-dev, libstdc++6-7-dbg, gdb, python3, pyflakes, pyflakes3, python
 Description: Pacote com os compiladores das linguagens de programação
  aceitas na maratona
  .
