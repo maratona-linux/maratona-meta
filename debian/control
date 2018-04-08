@@ -6,9 +6,10 @@ Build-Depends: debhelper
 
 Package: maratona-desktop-virtual
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common, gnome-software
+Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
 Depends: maratona-desktop, maratona-virtual-minimal
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux para máquina virtual
+
 
 Package: maratona-desktop
 Architecture: all
