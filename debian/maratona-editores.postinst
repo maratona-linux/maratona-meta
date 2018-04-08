@@ -11,7 +11,7 @@ done
 if [ ! -d /snap/pycharm-community/ ]; then
 	echo "Não foi possível instalar o Pycharm. Foram feitas 3 tentativas"
 else
-	echo "Pycharm Instalado"
+	echo "Pycharm Community Instalado"
 fi
 
 tentativa=0
@@ -23,5 +23,5 @@ done
 if [ ! -d /snap/intellij-idea-community/ ]; then
 	echo "Não foi possível instalar o Intellij Idea Community. Foram feitas 3 tentativas"
 else
-	echo "Intellij Instalado"
+	echo "Intellij Idea Community Instalado"
 fi
