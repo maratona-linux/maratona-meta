@@ -10,7 +10,6 @@ Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjo
 Depends: maratona-desktop, maratona-virtual-minimal
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux para máquina virtual
 
-
 Package: maratona-desktop
 Architecture: all
 Conflicts: libreoffice-core, thunderbird, unity-webapps-common, gnome-software
