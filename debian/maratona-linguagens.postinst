@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+tentativas=0
+
+while [ ! -d /snap/kotlin/ ] && [ $tentativa -lt 3 ]; do
+	snap install kotlin --classic
+	tentativa=$((tentativa+1))
+done
+
+if [ -d /snap/kotlin/ ]; then
+	echo "Kotlin instalado"
+else
+	echo "Não foi possivel instalar o Kotlin. Foram feitas 3 tentativas"
+fi

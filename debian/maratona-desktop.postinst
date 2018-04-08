@@ -1,5 +1,0 @@
-#!/bin/bash
-
-#Force UTC timezone
-cp /usr/share/zoneinfo/UCT /etc/localtime || true
-cp /usr/share/zoneinfo/UCT /etc/timezone || true

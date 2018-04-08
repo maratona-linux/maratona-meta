@@ -6,15 +6,15 @@ Build-Depends: debhelper
 
 Package: maratona-desktop-virtual
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common, gnome-software
+Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
 Depends: maratona-desktop, maratona-virtual-minimal
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux para máquina virtual
 
 Package: maratona-desktop
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common, gnome-software
+Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
 Pre-Depends: maratona-essential
-Depends: ssh, maratona-conflitos, maratona-background, maratona-skel, maratona-usuario-icpc, maratona-firewall, maratona-submission, compiz, compizconfig-settings-manager, compiz-plugins-extra, compiz-plugins-main, compiz-plugins
+Depends: ssh, maratona-conflitos, maratona-background, maratona-favoritos, maratona-usuario-icpc, maratona-firewall, maratona-submission, compiz, compizconfig-settings-manager, compiz-plugins-extra, compiz-plugins-main, compiz-plugins
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
  ubuntu em uma versão controlada do ambiente da maratona.
@@ -24,11 +24,10 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 
 Package: maratona-conflitos
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, unity-webapps-common, gnome-software
+Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
 Description: Pacote do Maraton Linux com os conflitos para a maratona
  Este pacote além de remover alguns pacotes desnecessários para a maratona
  também desabilita o funcionamento do:
-  - Unity Lenses;
   - Acesso a usuário guest
 
 Package: maratona-virtual-minimal
@@ -45,10 +44,9 @@ Description: Pacote Virtual com as dependências mínimas para o ambiente marato
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
 
-
 Package: maratona-linguagens
 Architecture: all
-Depends: build-essential, default-jre, default-jdk, libstdc++6-4.7-dev, libstdc++6-4.7-dbg, gdb, python3, pyflakes, pyflakes3, python, fpc-3.0.0
+Depends: build-essential, default-jre, default-jdk, libstdc++-7-dev, libstdc++6-7-dbg, gdb, python3, pyflakes, pyflakes3, python
 Description: Pacote com os compiladores das linguagens de programação
  aceitas na maratona
  .
@@ -56,7 +54,7 @@ Description: Pacote com os compiladores das linguagens de programação
 
 Package: maratona-linguagens-doc
 Architecture: all
-Depends: manpages-dev, gcc-doc, stl-manual, c++-annotations, libstdc++6-4.7-doc, default-jdk-doc, python3-doc, python2.7-doc, fp-docs-3.0.0, cppreference-doc-en-html
+Depends: manpages, gcc-doc, libstdc++-7-doc, default-jdk-doc, python3-doc, python2.7-doc, cppreference-doc-en-html
 Description: Pacote contendo as dependências de documentação das linguagens
  aceitas na maratona
  .
@@ -64,29 +62,30 @@ Description: Pacote contendo as dependências de documentação das linguagens
 
 Package: maratona-editores
 Architecture: all
-Depends: vim, vim-gnome, geany, geany-plugins, geany-plugin-addons, eclipse, eclipse-pde, eclipse-rcp, eclipse-platform, eclipse-jdt, eclipse-cdt, emacs, gedit, gedit-plugins, gedit-developer-plugins
+Depends: vim, vim-gnome, geany, geany-plugins, geany-plugin-addons, eclipse, eclipse-pde, eclipse-rcp, eclipse-platform, eclipse-jdt, eclipse-cdt, libcanberra-gtk-module, emacs, gedit, gedit-plugins, gedit-developer-plugins, kate, codeblocks
 Description: Pacote Virtual do Maratona Linux com os editores permitidos
  na maratona
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
 
-Package: maratona-skel
+Package: maratona-favoritos
 Pre-Depends: maratona-editores, maratona-linguagens-doc
 Depends: coreutils
 Architecture: all
-Description: Pacote que gera o skel personalizado para usuários Maratona Linux
- Neste pacote são gerados os ícones padrões no desktop dos usuários que
+Description: Pacote que gera a barra lateral personalizada para usuários Maratona Linux
+ Neste pacote são gerados os ícones padrões na barra lateral dos usuários que
  serão adicionados. Os ícones gerados são:
-    - Javadoc
-    - stldoc
-    - cppannotations
     - eclipse
     - gedit
     - emacs
     - gnome-terminal
+    - kate
+    - codeblocks
+    - Pycharm Community
+    - Intellij Idea Community
 
 Package: maratona-usuario-icpc
-Pre-Depends: maratona-skel, makepasswd
+Pre-Depends: maratona-favoritos, makepasswd
 Architecture: all
 Description: Pacote que cria um usuário icpc para o competidor da maratona
  Este pacote cria o usuário sem privilégios administrativos para competição.
@@ -95,4 +94,3 @@ Description: Pacote que cria um usuário icpc para o competidor da maratona
    - zera-home-icpc : Apaga todos os arquivos do home do usuário icpc
       + este script é utilizado após o warmup para o home do usuário
       iniciar vazio durante a competição.
-
