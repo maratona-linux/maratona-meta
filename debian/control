@@ -62,7 +62,7 @@ Description: Pacote contendo as dependências de documentação das linguagens
 
 Package: maratona-editores
 Architecture: all
-Depends: vim, vim-gnome, geany, geany-plugins, geany-plugin-addons, eclipse, eclipse-pde, eclipse-rcp, eclipse-platform, eclipse-jdt, eclipse-cdt, emacs, gedit, gedit-plugins, gedit-developer-plugins
+Depends: vim, vim-gnome, geany, geany-plugins, geany-plugin-addons, eclipse, eclipse-pde, eclipse-rcp, eclipse-platform, eclipse-jdt, eclipse-cdt, libcanberra-gtk-module, emacs, gedit, gedit-plugins, gedit-developer-plugins, kate, codeblocks
 Description: Pacote Virtual do Maratona Linux com os editores permitidos
  na maratona
  .

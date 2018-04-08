@@ -1,3 +1,27 @@
 #!/bin/bash
 
-snap install pycharm-community --classic
+set -e
+
+tentativa=0
+while [ ! -d /snap/pycharm-community/ ] && [ $tentativa -lt 3 ]; do
+	snap install pycharm-community --classic
+	tentativa=$((tentativa+1))
+done
+
+if [ ! -d /snap/pycharm-community/ ]; then
+	echo "Não foi possível instalar o Pycharm. Foram feitas 3 tentativas"
+else
+	echo "Pycharm Instalado"
+fi
+
+tentativa=0
+while [ ! -d /snap/intellij-idea-community/ ] && [ $tentativa -lt 3 ]; do
+	snap install intellij-idea-community --classic --edge
+	tentativa=$((tentativa+1))
+done
+
+if [ ! -d /snap/intellij-idea-community/ ]; then
+	echo "Não foi possível instalar o Intellij Idea Community. Foram feitas 3 tentativas"
+else
+	echo "Intellij Instalado"
+fi
