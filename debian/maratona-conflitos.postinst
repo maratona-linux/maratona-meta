@@ -4,28 +4,29 @@
 dpkg-divert --divert /etc/xdg/update-notifier.desktop-desativado.orig \
             --rename /etc/xdg/autostart/update-notifier.desktop
 
-gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']" >/dev/null 2>&1
-
 if [[ -e /etc/ssh/sshd_config ]] && ! grep -q 'icpc' /etc/ssh/sshd_config; then
   echo "DenyUsers icpc" >> /etc/ssh/sshd_config
 fi
 
 ##TODO deixar isso em arquivos e apenas rodar o dconf update aqui no postinst
 
-mkdir -p /etc/lightdm/lightdm.conf.d
-cat <<EOF > /etc/lightdm/lightdm.conf.d/10-maratona-login-spec.conf
-[Seat:*]
-allow-guest=false
-greeter-hide-users=true
-greeter-show-manual-login=true
+# A pasta db e onde a configuracao e feita de fato
+mkdir -p /etc/dconf/db/gdm.d/
+cat <<EOF > /etc/dconf/db/gdm.d/00-login-screen
+[org/gnome/login-screen]
+# Para nao mostrar a lista de usuarios
+disable-user-list=true
 EOF
 
+# A pasta profile/ diz para quem aplicar e diz aonde achar a o que deve ser feito
 mkdir -p /etc/dconf/{profile,db/local.d}
-cat > /etc/dconf/profile/user <<EOF
+cat > /etc/dconf/profile/gdm <<EOF
 user-db:user
-system-db:local
+system-db:gdm
+file-db:/usr/share/gdm/greeter.dconf-defaults
 EOF
 
+# Desativa as notificacoes
 cat > /etc/dconf/db/local.d/update-manager <<EOF
 [com/ubuntu/update-notifier]
 no-show-notifications=false
