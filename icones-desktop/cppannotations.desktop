@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version=1
-Name=C++ Annotations
-Comment=C++ Annotations
-Exec=firefox /usr/share/doc/c++-annotations/html/index.html
-Terminal=false
-Type=Application

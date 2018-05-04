@@ -1,7 +1,0 @@
-[Desktop Entry]
-Version=1
-Name=C++ STL
-Comment=C++ STL
-Exec=firefox /usr/share/doc/stl-manual/html/index.html
-Terminal=false
-Type=Application

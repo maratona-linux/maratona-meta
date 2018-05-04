@@ -1,7 +1,8 @@
 [Desktop Entry]
 Version=1
-Name=Python 3.5 Doc
+Name=Python 3.6 Doc
 Comment=Python Doc
-Exec=firefox /usr/share/doc/python3.5/html/index.html
+Icon=/usr/share/icons/maratona-linguagens-doc/python.svg
+Exec=firefox /usr/share/doc/python3.6/html/index.html
 Terminal=false
 Type=Application

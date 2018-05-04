@@ -1,8 +1,14 @@
 #! /usr/bin/make -f
 
 override_dh_auto_install:
-	mkdir -p debian/maratona-skel/etc/skel/Desktop/
-	cp icones-desktop/* debian/maratona-skel/etc/skel/Desktop/
+	# Icones na pasta destinada a icones no /usr/share/icons
+	mkdir -p debian/maratona-linguagens-doc/usr/share/icons/maratona-linguagens-doc/
+	cp icons/* debian/maratona-linguagens-doc/usr/share/icons/maratona-linguagens-doc/
+
+	# Criando atalhos do maratona-linguagens-doc no /usr/share/applications
+	mkdir -p debian/maratona-linguagens-doc/usr/share/applications/
+	cp icones-desktop/* debian/maratona-linguagens-doc/usr/share/applications/
+
 	#tar xf mozilla.tar.xz -C debian/maratona-skel/
 	mkdir -p debian/maratona-skel/etc/skel/.local/share/applications/
 	cp firefox.desktop debian/maratona-skel/etc/skel/.local/share/applications/
@@ -12,8 +18,6 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-usuario-icpc/usr/bin
 	cp scripts-administrativos/clean-icpc-on-reboot debian/maratona-usuario-icpc/usr/bin/
 	chmod a+x debian/maratona-usuario-icpc/usr/bin/clean-icpc-on-reboot
-
-
 %:
 	echo "$@"
 	dh $@
