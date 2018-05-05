@@ -1,6 +1,10 @@
 #! /usr/bin/make -f
 
 override_dh_auto_install:
+	# Criando atalhos do maratona-linguagens-doc em /usr/share/applications
+	mkdir -p debian/maratona-linguagens-doc/usr/share/applications/
+	cp icones-desktop/* debian/maratona-linguagens-doc/usr/share/applications/
+
 	mkdir -p debian/maratona-skel/etc/skel/Desktop/
 	cp icones-desktop/* debian/maratona-skel/etc/skel/Desktop/
 	#tar xf mozilla.tar.xz -C debian/maratona-skel/

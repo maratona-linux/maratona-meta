@@ -54,7 +54,7 @@ Description: Pacote com os compiladores das linguagens de programação
 
 Package: maratona-linguagens-doc
 Architecture: all
-Depends: manpages-dev, gcc-doc, stl-manual, c++-annotations, libstdc++6-4.7-doc, default-jdk-doc, python3-doc, python2.7-doc, fp-docs-3.0.0, cppreference-doc-en-html
+Depends: manpages-dev, gcc-doc, libstdc++-7-doc, default-jdk-doc, python3-doc, python2.7-doc, cppreference-doc-en-html
 Description: Pacote contendo as dependências de documentação das linguagens
  aceitas na maratona
  .

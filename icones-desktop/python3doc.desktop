@@ -2,6 +2,6 @@
 Version=1
 Name=Python 3.5 Doc
 Comment=Python Doc
-Exec=firefox /usr/share/doc/python3.5/html/index.html
+Exec=firefox /usr/share/doc/python3.6/html/index.html
 Terminal=false
 Type=Application
