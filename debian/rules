@@ -5,11 +5,6 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-linguagens-doc/usr/share/applications/
 	cp icones-desktop/* debian/maratona-linguagens-doc/usr/share/applications/
 
-	mkdir -p debian/maratona-skel/etc/skel/Desktop/
-	cp icones-desktop/* debian/maratona-skel/etc/skel/Desktop/
-	#tar xf mozilla.tar.xz -C debian/maratona-skel/
-	mkdir -p debian/maratona-skel/etc/skel/.local/share/applications/
-	cp firefox.desktop debian/maratona-skel/etc/skel/.local/share/applications/
 	mkdir -p debian/maratona-usuario-icpc/usr/sbin/
 	cp scripts-administrativos/zera-home-icpc debian/maratona-usuario-icpc/usr/sbin/
 	chmod a+x debian/maratona-usuario-icpc/usr/sbin/zera-home-icpc

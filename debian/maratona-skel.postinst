@@ -1,9 +1,0 @@
-#!/bin/bash
-
-[ -f /usr/share/applications/eclipse.desktop ] && cp /usr/share/applications/eclipse.desktop /etc/skel/Desktop/
-[ -f /usr/share/applications/gedit.desktop ] && cp /usr/share/applications/gedit.desktop /etc/skel/Desktop/
-[ -f /usr/share/applications/geany.desktop ] && cp /usr/share/applications/geany.desktop /etc/skel/Desktop/
-[ -f /usr/share/applications/emacs23.desktop ] && cp /usr/share/applications/emacs23.desktop /etc/skel/Desktop/
-[ -f /usr/share/applications/emacs24.desktop ] && cp /usr/share/applications/emacs24.desktop /etc/skel/Desktop/
-cp /usr/share/applications/gnome-terminal.desktop /etc/skel/Desktop/
-chmod 755 /etc/skel/Desktop/*.desktop
