@@ -69,7 +69,7 @@ Description: Pacote Virtual do Maratona Linux com os editores permitidos
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
 
 Package: maratona-usuario-icpc
-Pre-Depends: makepasswd
+Pre-Depends: maratona-linguagens-doc, makepasswd
 Conflicts: maratona-skel
 Architecture: all
 Description: Pacote que cria um usuário icpc para o competidor da maratona
