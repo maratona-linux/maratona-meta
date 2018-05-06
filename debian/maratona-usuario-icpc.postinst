@@ -25,3 +25,21 @@ if ! grep -q zera-home-icpc /etc/rc.local | grep true; then
     sed -i '/^exit 0/i \
 bash \/usr\/sbin\/zera-home-icpc || true' /etc/rc.local
 fi
+
+# Copia os atalhos para area de trabalho.
+mkdir -p /home/icpc/Desktop/
+[ -f /usr/share/applications/cppreference.desktop ] && \
+cp /usr/share/applications/cppreference.desktop /home/icpc/Desktop/
+
+[ -f /usr/share/applications/javadoc.desktop ] && \
+cp /usr/share/applications/javadoc.desktop /home/icpc/Desktop/
+
+[ -f /usr/share/applications/python2doc.desktop ] && \
+cp /usr/share/applications/python2doc.desktop /home/icpc/Desktop/
+
+[ -f /usr/share/applications/python3doc.desktop ] && \
+cp /usr/share/applications/python3doc.desktop /home/icpc/Desktop/
+
+# Muda o dono da pasta de root para icpc
+chmod 755 /home/icpc/Desktop/*
+chown -R icpc:users /home/icpc/Desktop/
