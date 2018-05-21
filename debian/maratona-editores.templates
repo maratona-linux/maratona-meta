@@ -1,8 +1,8 @@
 Template: maratona-editores/question_try_again
 Type: select
 Choices: Try Again, Later
-Description: It's was no possible install the package(s) ${package} via snap.
- Do you want to try install again, or later?
+Description: It was not possible to install the package(s) ${package} via snap.
+ Do you want to try to install again?
 
 Template: maratona-editores/notice
 Type: note
