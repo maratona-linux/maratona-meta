@@ -26,14 +26,6 @@ if ! grep -q "^icpc " /etc/security/limits.conf; then
   echo "icpc          hard nproc 1024" >> /etc/security/limits.conf
 fi
 
-grep -v 'zera-home-icpc' /etc/rc.local > /tmp/t
-mv /tmp/t /etc/rc.local
-chmod a+x /etc/rc.local
-if ! grep -q zera-home-icpc /etc/rc.local | grep true; then
-    sed -i '/^exit 0/i \
-bash \/usr\/sbin\/zera-home-icpc || true' /etc/rc.local
-fi
-
 # Copia os atalhos para area de trabalho.
 mkdir -p /home/icpc/Desktop/
 [ -f /usr/share/applications/cppreference.desktop ] && \
@@ -51,3 +43,6 @@ cp /usr/share/applications/python3doc.desktop /home/icpc/Desktop/
 # Muda o dono da pasta de root para icpc
 chmod 755 /home/icpc/Desktop/*
 chown -R icpc:users /home/icpc/Desktop/
+
+# Adiciona o "servico" do zera-home-icpc para executar na inicializacao
+systemctl enable maratona-usuario-icpc.service
