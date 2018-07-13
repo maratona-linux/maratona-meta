@@ -61,6 +61,7 @@ Description: Pacote contendo as dependências de documentação das linguagens
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
 
 Package: maratona-editores
+Pre-Depends: maratona-linguagens
 Architecture: all
 Depends: maratona-linguagens, vim, vim-gnome, geany, geany-plugins, geany-plugin-addons, emacs, gedit, gedit-plugins, gedit-developer-plugins, kate, konsole, codeblocks, netbeans, python3-distutils, python-distutils-extra
 Description: Pacote Virtual do Maratona Linux com os editores permitidos
