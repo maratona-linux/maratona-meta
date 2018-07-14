@@ -13,6 +13,11 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-desktop/usr/share/applications/
 	cp firefox.desktop debian/maratona-desktop/usr/share/applications/firefox_boca.desktop
 
+	# Script para ser inicializado no começo da secao para marcar os atalhos
+	# como confiaveis
+	mkdir -p debian/maratona-desktop/etc/profile.d/
+	cp maratona-profile/maratona-desktop-profile.sh debian/maratona-desktop/etc/profile.d/
+
 	# Service para zerar home no reboot via systemd
 	mkdir -p debian/maratona-usuario-icpc/lib/systemd/system/
 	cp usuario-icpc-service/maratona-usuario-icpc.service debian/maratona-usuario-icpc/lib/systemd/system/
