@@ -26,23 +26,9 @@ if ! grep -q "^icpc " /etc/security/limits.conf; then
   echo "icpc          hard nproc 1024" >> /etc/security/limits.conf
 fi
 
-# Copia os atalhos para area de trabalho.
-mkdir -p /home/icpc/Desktop/
-[ -f /usr/share/applications/cppreference.desktop ] && \
-cp /usr/share/applications/cppreference.desktop /home/icpc/Desktop/
-
-[ -f /usr/share/applications/javadoc.desktop ] && \
-cp /usr/share/applications/javadoc.desktop /home/icpc/Desktop/
-
-[ -f /usr/share/applications/python2doc.desktop ] && \
-cp /usr/share/applications/python2doc.desktop /home/icpc/Desktop/
-
-[ -f /usr/share/applications/python3doc.desktop ] && \
-cp /usr/share/applications/python3doc.desktop /home/icpc/Desktop/
-
-# Muda o dono da pasta de root para icpc
-chmod 755 /home/icpc/Desktop/*
-chown -R icpc:users /home/icpc/Desktop/
-
 # Adiciona o "servico" do zera-home-icpc para executar na inicializacao
 systemctl enable maratona-usuario-icpc.service
+
+# Colocando para o usuario icpc ter sua home zerada no boot criando o arquivo
+# .clean-home que faz o servico do usuario icpc ser executado
+touch /home/icpc/.clean-home
