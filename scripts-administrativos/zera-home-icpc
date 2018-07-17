@@ -35,6 +35,16 @@ pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
 usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
 echo "."
 
+# Os arquivos de configuração dos editores do maratona estão no arquivo
+# maratona-desktop-configs.tar.gz que são mantidos no skel e quando o usuario
+# icpc é recriado, é copiado para a home do icpc, extraido e excluido (o
+# .tar.gz)
+[ -f /home/icpc/maratona-desktop-configs.tar.xz ] && \
+tar -xf /home/icpc/maratona-desktop-configs.tar.xz -C /home/icpc/ && \
+rm /home/icpc/maratona-desktop-configs.tar.xz
+
+chown -R icpc:users ~icpc
+
 # Copiando os atalhos da documentação para o o Desktop
 mkdir -p /home/icpc/Desktop/
 [ -f /usr/share/applications/cppreference.desktop ] && \
