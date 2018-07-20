@@ -8,7 +8,7 @@ cat << EOF > /etc/skel/.config/gnome-initial-setup-done
 yes
 EOF
 
-pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
+pass=$(echo -n icpcd | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
 id -u icpc >/dev/null 2>/dev/null
 if [ $? != 0 ]; then
   useradd -d /home/icpc -k /etc/skel -m -p "$pass" -s /bin/bash -g users icpc
