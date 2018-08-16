@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+
+# Removendo o icone do firefox_boca.desktop dos atalhos
+[ -f /usr/share/applications/firefox_boca.desktop ] && \
+  rm /usr/share/applications/firefox_boca.desktop
+
+# Removendo o profile - Script para alterar o metadado dos icones na area de
+# trabalho
+[ -f /etc/profile.d/maratona-desktop-profile.sh ] && \
+  rm /etc/profile.d/maratona-desktop-profile.sh
+
+# Removendo os profiles do dconf - barra de favoritos
+[ -f /etc/dconf/profile/user ] && \
+  rm /etc/dconf/profile/user
+
+[ -f /etc/dconf/db/local.d/favoritos ] && \
+  rm /etc/dconf/db/local.d/favoritos
+
+dconf update

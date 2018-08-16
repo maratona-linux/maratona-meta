@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+# Removendo os pacotes instalados via snap e removendo os arquivos de
+# configuracao
+snap remove pycharm-community
+snap remove intellij-idea-community
+snap remove eclipse
+
+[ -f /etc/skel/maratona-desktop-configs.tar.xz ] && \
+	rm /etc/skel/maratona-desktop-configs.tar.xz

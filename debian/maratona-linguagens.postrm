@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+# Removendo o kotlin, adicionado com a instalação via snap
+snap remove kotlin
