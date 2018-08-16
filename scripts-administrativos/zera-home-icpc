@@ -8,30 +8,44 @@ if ! whoami|grep -q root; then
   exit 1
 fi
 
-if [[ ! -e "/home/icpc/.clean-home" ]] && [[ "$1" != "-f" ]]; then
+# Se o usuario icpc não existe, o script deve passar adiante para cria-lo.
+# No caso de uma nova instalação via LiveCD do maratona na máquina, o usuario
+# não existe, e nesse caso, ele deve ser criado para que o ambiente já esteja
+# pronto para uso. No caso de uma instação via apt, o .clean-home irá existir no
+# diretorio, e o usuario não vai existir, o que deve cria-lo.
+getent passwd icpc &>/dev/null
+RESP="$?"
+if [[ ! -e "/home/icpc/.clean-home" ]] && [[ "$1" != "-f" ]] && ((RESP == 0)) ; then
   echo "No /home/icpc/.clean-home file found"
   echo "If you wish to clean anyway run:"
   echo "  $0 -f"
   exit 1
 fi
 
-printf "Verificando existência do usuário \"icpc\""
-getent passwd icpc &>/dev/null
-RESP="$?"
-if ((RESP != 0 )); then
-  echo ". falhou"
-  echo "abortando".
-  exit 1
-fi
-echo "."
+# Gera uma senha de inicio.
+pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
 
+# Verifica a existencia do usuario ICPC
+# Caso ele não exista, ele deve ser criado com a senha criada anteriormente.
+printf "Verificando existência do usuário \"icpc\""
+if ((RESP != 0 )); then
+	echo "."
+	echo "Usuario não exite, criando..".
+	useradd -d /home/icpc -k /etc/skel -m -p "$pass" -s /bin/bash -g users icpc
+
+	if ! grep -q "^icpc " /etc/security/limits.conf; then
+		echo "icpc          hard nproc 1024" >> /etc/security/limits.conf
+	fi
+fi
+
+# De qualquer modo, o seu diretorio tem que ser recriado.
 printf "Recriando diretório home"
 rm -rf ~icpc
 cp -a /etc/skel ~icpc
 chown -R icpc:users ~icpc
 echo "."
 printf "Restaurando senha"
-pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
+# E o usermod será pra todos.
 usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
 echo "."
 
