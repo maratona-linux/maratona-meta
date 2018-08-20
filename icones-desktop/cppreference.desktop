@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1
-Name=C++ Reference
-Comment=C++ Reference
-Icon=/usr/share/icons/maratona-linguagens-doc/scalable/cpp_logo.svg
-Exec=firefox /usr/share/cppreference/doc/html/en/index.html
-Terminal=false
-Type=Application

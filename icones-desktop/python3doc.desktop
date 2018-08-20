@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1
-Name=Python 3.6 Doc
-Comment=Python Doc
-Icon=/usr/share/icons/maratona-linguagens-doc/scalable/python.svg
-Exec=firefox /usr/share/doc/python3.6/html/index.html
-Terminal=false
-Type=Application

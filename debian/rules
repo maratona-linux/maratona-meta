@@ -1,14 +1,6 @@
 #! /usr/bin/make -f
 
 override_dh_auto_install:
-	# Icones na pasta destinada a icones no /usr/share/icons
-	mkdir -p debian/maratona-linguagens-doc/usr/share/icons/maratona-linguagens-doc/scalable/
-	cp icons/* debian/maratona-linguagens-doc/usr/share/icons/maratona-linguagens-doc/scalable/
-
-	# Criando atalhos do maratona-linguagens-doc em /usr/share/applications
-	mkdir -p debian/maratona-linguagens-doc/usr/share/applications/
-	cp icones-desktop/* debian/maratona-linguagens-doc/usr/share/applications/
-
 	# Firefox copiado e renomeado
 	mkdir -p debian/maratona-desktop/usr/share/applications/
 	cp firefox.desktop debian/maratona-desktop/usr/share/applications/firefox_boca.desktop
@@ -19,8 +11,8 @@ override_dh_auto_install:
 	cp maratona-profile/maratona-desktop-profile.sh debian/maratona-desktop/etc/profile.d/
 
 	# Arquivo de configuração dos editores
-	mkdir -p debian/maratona-editores/etc/skel/
-	cp maratona-editores-config/* debian/maratona-editores/etc/skel/
+	mkdir -p debian/maratona-usuario-icpc/etc/skel/
+	cp maratona-editores-config/* debian/maratona-usuario-icpc/etc/skel/
 
 	# Service para zerar home no reboot via systemd
 	mkdir -p debian/maratona-usuario-icpc/lib/systemd/system/

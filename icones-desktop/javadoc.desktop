@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1
-Name=Java API
-Comment=Java API
-Icon=/usr/share/icons/maratona-linguagens-doc/scalable/java.svg
-Exec=firefox /usr/share/doc/openjdk-11-jre-headless/api/index.html
-Terminal=false
-Type=Application
