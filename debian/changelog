@@ -1,3 +1,37 @@
+maratona-meta (20180820) bionic; urgency=medium
+
+  * Bruno Cesar Ribas (2):
+      Removing references to maratona-{linguagens*,editores}
+      Merge branch 'master' of github.com:maratona-linux/maratona-meta
+
+  * Wall Berg Morais (23):
+      debian/control: Atualizado os conflitos para Ubuntu 18.04. (#3)
+      debian/{control,maratona-editores*}: Atualizando dependêndencias e scripts. (#4)
+      maratona-linguagens: Atualizando dependências e scripts. (#5)
+      icones-desktop/jetbrains-pycharm-ce.desktop: Removido (#7)
+      Atualizando dependências do maratona-linguagens-doc. (#8)
+      Removendo maratona-skel do maratona-meta. (#9)
+      Adicionado ícones para documentação das linguagens (#10)
+      maratona-usuario-icpc: Atualizando dependências e scripts. (#11)
+      debian/{maratona-desktop.postinst,rules}: Atualização da Barra de favoritos (#12)
+      debian/maratona-{editores,linguagens}.templates: Fix english text. (#13)
+      debian/maratona-usuario-icpc.postinst: Tirada mensagem de primeiro acesso Gnome. (#14)
+      maratona-usuario-icpc: zera-home-icpc agora é executado ao inicializar o sistema. (#15)
+      maratona-editores: depende python3-distutils e python-distutils-extra
+      maratona-editores: pré-depende do maratona-linguagens. (#17)
+      maratona-desktop: Adicionado script que altera metadado do icones .desktop. (#18)
+      maratona-editores: Removido o netbeans como dependência. (#19)
+      maratona-usuario-icpc: Arquivo .clean-home adicionado na home do usuario icpc. (#20)
+      maratona-{editores,usuario-icpc}: Adicionado arquivo de configuração editores. (#21)
+      usuario-icpc-service/maratona-usuario-icpc.service: Fix text. (#22)
+      maratona-usuario-icpc: Senha invalida para o primeiro acesso do usuário icpc. (#23)
+      maratona-usuario-icpc: Fix "daemon" type to oneshot and daemon to service. (#24)
+      maratona-usuario-icpc: Atualizado scripts de adição de usuario icpc. (#25)
+      maratona-profile/maratona-desktop-profile.sh: Tirando verificação de arquivo. (#26)
+
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Mon, 20 Aug 2018 21:41:22 -0300
+
 maratona-meta (2017-11) xenial; urgency=high
 
   * Security Bug fix
