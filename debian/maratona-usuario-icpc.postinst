@@ -1,13 +1,5 @@
 #!/bin/bash
 
-# Antes de criar o usuario, criar no skel um arquivo para nunca aparecer
-# a mensagem inicial do gnome. Só é preciso fazer uma vez, pois quando
-# o script do zera home é executado, é restaurado o skel dele
-mkdir -p /etc/skel/.config/
-cat << EOF > /etc/skel/.config/gnome-initial-setup-done
-yes
-EOF
-
 id -u icpc >/dev/null 2>/dev/null
 if [ $? == 0 ]; then
   # Se o usuario existe, vai verificar os previlegios dele.
