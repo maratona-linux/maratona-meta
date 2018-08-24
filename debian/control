@@ -6,13 +6,13 @@ Build-Depends: debhelper
 
 Package: maratona-desktop-virtual
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
+Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers, gnome-initial-setup
 Depends: maratona-desktop, maratona-virtual-minimal
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux para máquina virtual
 
 Package: maratona-desktop
 Architecture: all
-Conflicts: maratona-skel, libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
+Conflicts: maratona-skel, libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers, gnome-initial-setup
 Pre-Depends: maratona-essential
 Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, maratona-submission, compiz, compizconfig-settings-manager, compiz-plugins-extra, compiz-plugins-main, compiz-plugins
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
@@ -24,7 +24,7 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 
 Package: maratona-conflitos
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers
+Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers, gnome-initial-setup
 Description: Pacote do Maraton Linux com os conflitos para a maratona
  Este pacote além de remover alguns pacotes desnecessários para a maratona
  também desabilita o funcionamento do:
