@@ -1,3 +1,17 @@
+maratona-meta (20180826) bionic; urgency=medium
+
+  * Bruno Cesar Ribas (3):
+      maratona-desktop-profile.sh: Run only for user icpc
+      d/rules: maratona-desktop-profile moved to package maratona-usuario-icpc
+      d/control: Remove compiz dependencies from maratona-desktop
+
+  * Wall Berg Morais (3):
+      d/control: Adicionando o gnome-initial-setup na lista de conflitos (#28)
+      martona-editores-config/*: Atualizando configurações. (#29)
+      d/maratona-usuario-icpc: Removendo adição do arquivo gnome-initial-setup no skel (#30)
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Sun, 26 Aug 2018 15:30:18 -0300
+
 maratona-meta (20180820) bionic; urgency=medium
 
   * Bruno Cesar Ribas (2):
