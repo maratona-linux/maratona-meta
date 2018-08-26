@@ -5,10 +5,6 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-desktop/usr/share/applications/
 	cp firefox.desktop debian/maratona-desktop/usr/share/applications/firefox_boca.desktop
 
-	# Script para ser inicializado no começo da secao para marcar os atalhos
-	# como confiaveis
-	mkdir -p debian/maratona-desktop/etc/profile.d/
-	cp maratona-profile/maratona-desktop-profile.sh debian/maratona-desktop/etc/profile.d/
 
 	# Arquivo de configuração dos editores
 	mkdir -p debian/maratona-usuario-icpc/etc/skel/
@@ -24,6 +20,10 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-usuario-icpc/usr/bin
 	cp scripts-administrativos/clean-icpc-on-reboot debian/maratona-usuario-icpc/usr/bin/
 	chmod a+x debian/maratona-usuario-icpc/usr/bin/clean-icpc-on-reboot
+	# Script para ser inicializado no começo da secao para marcar os atalhos
+	# como confiaveis
+	mkdir -p debian/maratona-usuario-icpc/etc/profile.d/
+	cp maratona-profile/maratona-desktop-profile.sh debian/maratona-usuario-icpc/etc/profile.d/
 
 
 %:
