@@ -14,4 +14,9 @@ cat << EOF > /etc/dconf/db/local.d/favoritos
 favorite-apps = ['firefox_boca.desktop', 'nautilus.desktop', 'eclipse_eclipse.desktop', 'gedit.desktop', 'geany.desktop', 'emacs25.desktop', 'org.kde.kate.desktop', 'codeblocks.desktop', 'gnome-terminal.desktop', 'pycharm-community_pycharm-community.desktop', 'intellij-idea-community_intellij-idea-community.desktop', 'netbeans.desktop']
 EOF
 
+cat << EOF > /etc/dconf/db/local.d/background
+[org/gnome/desktop/background]
+picture-options="stretched"
+EOF
+
 dconf update
