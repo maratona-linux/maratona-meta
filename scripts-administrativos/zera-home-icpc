@@ -22,6 +22,7 @@ if [[ ! -e "/home/icpc/.clean-home" ]] && [[ "$1" != "-f" ]] && ((RESP == 0)) ; 
   exit 1
 fi
 
+echo "Cleaning ICPC home..." > /etc/nologin
 # Gera uma senha de inicio.
 pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
 
@@ -86,5 +87,6 @@ done
 echo
 echo "Tudo feito. Considere um reboot para que os diretórios temporários e"
 echo "tmpfs sejam limpos"
+rm /etc/nologin
 
 exit 0
