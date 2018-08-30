@@ -1,3 +1,15 @@
+maratona-meta (20180829) bionic; urgency=medium
+
+  * Bruno Cesar Ribas (6):
+      d/control: Conflicts with popularity-contest
+      d/control: Conflicts with gnome-software-common
+      d/maratona-desktop.postinst: Add nautilus launcher
+      d/maratona-desktop.postinst: Force background stretched
+      scripts-administrativos/zera-home-icpc: Create a nologin file while cleaning
+      d/control: Removes maratona-desktop-virtual packages
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Wed, 29 Aug 2018 11:02:58 -0300
+
 maratona-meta (20180826) bionic; urgency=medium
 
   * Bruno Cesar Ribas (3):
