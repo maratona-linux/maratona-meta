@@ -1,0 +1,6 @@
+[Disable icpc time change]
+Identity=unix-user:icpc
+Action=org.freedesktop.timedate1.*
+ResultAny=no
+ResultInactive=no
+ResultActive=no

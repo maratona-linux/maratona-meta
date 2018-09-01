@@ -25,6 +25,8 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-usuario-icpc/etc/profile.d/
 	cp maratona-profile/maratona-desktop-profile.sh debian/maratona-usuario-icpc/etc/profile.d/
 
+	mkdir -p debian/maratona-usuario-icpc/etc/polkit-1/localauthority/90-mandatory.d/
+	cp polkit-1/*pkla debian/maratona-usuario-icpc/etc/polkit-1/localauthority/90-mandatory.d/
 
 %:
 	echo "$@"

@@ -1,0 +1,6 @@
+[Disable icpc network change]
+Identity=unix-user:icpc
+Action=org.freedesktop.NetworkManager.*
+ResultAny=no
+ResultInactive=no
+ResultActive=no
