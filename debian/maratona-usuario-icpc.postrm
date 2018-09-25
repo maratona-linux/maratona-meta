@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+# Removendo os scripts utilizados pelo usuario icpc e seus serviços associados.
+
+systemctl disable maratona-usuario-icpc.service
+
+[ -f /lib/systemd/system/maratona-usuario-icpc.service ] && \
+	rm /lib/systemd/system/maratona-usuario-icpc.service
+
+[ -f /usr/sbin/zera-home-icpc ] && \
+	rm /usr/sbin/zera-home-icpc
+
+[ -f /usr/bin/clean-icpc-on-reboot ] && \
+	rm /usr/bin/clean-icpc-on-reboot

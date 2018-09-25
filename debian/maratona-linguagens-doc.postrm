@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+# Removendo os icones criados.
+[ -d /usr/share/icons/maratona-linguagens-doc/ ] && \
+rm -r /usr/share/icons/maratona-linguagens-doc/
+
+# Removendo os atalhos criados em /usr/share/applications/
+[ -f /usr/share/applications/cppreference.desktop ] && \
+  rm /usr/share/applications/cppreference.desktop
+
+[ -f /usr/share/applications/javadoc.desktop ] && \
+  rm /usr/share/applications/javadoc.desktop
+
+[ -f /usr/share/applications/python2doc.desktop ] && \
+  rm /usr/share/applications/python2doc.desktop
+
+[ -f /usr/share/applications/python3doc.desktop ] && \
+  rm /usr/share/applications/python3doc.desktop
