@@ -5,6 +5,9 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-desktop/usr/share/applications/
 	cp firefox.desktop debian/maratona-desktop/usr/share/applications/firefox_boca.desktop
 
+	# Arquivo para substituir o dicionario default.
+	mkdir -p debian/maratona-desktop-latam/usr/share/gdict-1.0/sources/
+	cp gdict/default.desktop debian/maratona-desktop-latam/usr/share/gdict-1.0/sources/
 
 	# Arquivo de configuração dos editores
 	mkdir -p debian/maratona-usuario-icpc/etc/skel/
