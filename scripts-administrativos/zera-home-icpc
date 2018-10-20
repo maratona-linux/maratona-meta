@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exec &> /var/log/zera-home-icpc.log
+
 if ! whoami|grep -q root; then
   echo "Este comando deve ser executado com privilégios de ROOT."
   echo "Considere colocar o comando \"sudo\" a frente da chamada."
@@ -40,44 +42,51 @@ if ((RESP != 0 )); then
 fi
 
 # De qualquer modo, o seu diretorio tem que ser recriado.
-printf "Recriando diretório home"
-rm -rf ~icpc
-cp -a /etc/skel ~icpc
-chown -R icpc:users ~icpc
-echo "."
 printf "Restaurando senha"
 # E o usermod será pra todos.
 usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
 echo "."
 
-# Os arquivos de configuração dos editores do maratona estão no arquivo
-# maratona-desktop-configs.tar.gz que são mantidos no skel e quando o usuario
-# icpc é recriado, é copiado para a home do icpc, extraido e excluido (o
-# .tar.gz)
-[ -f /home/icpc/maratona-desktop-configs.tar.xz ] && \
-tar -xf /home/icpc/maratona-desktop-configs.tar.xz -C /home/icpc/ && \
-rm /home/icpc/maratona-desktop-configs.tar.xz
+printf "Recriando diretório home"
+casperok=false
 
-chown -R icpc:users ~icpc
+if [[ "$casperok" == "false" ]]; then
+  rm -rf ~icpc
+  cp -a /etc/skel ~icpc
+  chown -R icpc:users ~icpc
+  echo "."
+  # Os arquivos de configuração dos editores do maratona estão no arquivo
+  # maratona-desktop-configs.tar.gz que são mantidos no skel e quando o usuario
+  # icpc é recriado, é copiado para a home do icpc, extraido e excluido (o
+  # .tar.gz)
+  [ -f /home/icpc/maratona-desktop-configs.tar.xz ] && \
+  tar -xf /home/icpc/maratona-desktop-configs.tar.xz -C /home/icpc/ && \
+  rm /home/icpc/maratona-desktop-configs.tar.xz
 
-# Copiando os atalhos da documentação para o o Desktop
-mkdir -p /home/icpc/Desktop/
-[ -f /usr/share/applications/cppreference.desktop ] && \
-cp /usr/share/applications/cppreference.desktop /home/icpc/Desktop/
+  chown -R icpc:users ~icpc
 
-[ -f /usr/share/applications/javadoc.desktop ] && \
-cp /usr/share/applications/javadoc.desktop /home/icpc/Desktop/
+  # Copiando os atalhos da documentação para o o Desktop
+  mkdir -p /home/icpc/Desktop/
+  [ -f /usr/share/applications/cppreference.desktop ] && \
+  cp /usr/share/applications/cppreference.desktop /home/icpc/Desktop/
 
-[ -f /usr/share/applications/python2doc.desktop ] && \
-cp /usr/share/applications/python2doc.desktop /home/icpc/Desktop/
+  [ -f /usr/share/applications/javadoc.desktop ] && \
+  cp /usr/share/applications/javadoc.desktop /home/icpc/Desktop/
 
-[ -f /usr/share/applications/python3doc.desktop ] && \
-cp /usr/share/applications/python3doc.desktop /home/icpc/Desktop/
+  [ -f /usr/share/applications/python2doc.desktop ] && \
+  cp /usr/share/applications/python2doc.desktop /home/icpc/Desktop/
 
-# Mudando o dono, pois este script roda como root, então o que ele cria
-# pertence ao root, o que não deve acontecer.
-chown -R icpc:users /home/icpc/Desktop/
-chmod 755 /home/icpc/Desktop/*
+  [ -f /usr/share/applications/python3doc.desktop ] && \
+  cp /usr/share/applications/python3doc.desktop /home/icpc/Desktop/
+
+  # Mudando o dono, pois este script roda como root, então o que ele cria
+  # pertence ao root, o que não deve acontecer.
+  chown -R icpc:users /home/icpc/Desktop/
+  chmod 755 /home/icpc/Desktop/*
+else
+  rm -rf /mnt/upper/home/icpc
+  umount /mnt
+fi
 
 for i in media mnt var opt tmp usr; do
   printf "Removing files from: /$i"
