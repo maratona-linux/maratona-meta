@@ -1,3 +1,24 @@
+maratona-meta (20181020) bionic; urgency=medium
+
+  * Avoid workaround on casper
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Sat, 20 Oct 2018 01:26:15 -0300
+
+maratona-meta (20181015) bionic; urgency=medium
+
+  * Bruno Cesar Ribas (1):
+      Add polkit pkla rules for icpc user
+      Merge pull request #33 from wallberg13/desk-latam
+      Merge pull request #34 from wallberg13/latam-recommends
+
+   * Wall Berg Morais (4):
+      d/maratona-desktop.postinst: add sublime-text shortcut (#31)
+      Adicionando o vscode (do maratona-editores-chile) como favoritos. (#32)
+      Adicionando o pacote maratona-desktop-latam ao maratona-meta.
+      Adicionado o maratona-desktop-latam como recommends do maratona-desktop.
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Mon, 15 Oct 2018 23:45:34 -0300
+
 maratona-meta (20180829) bionic; urgency=medium
 
   * Bruno Cesar Ribas (6):
