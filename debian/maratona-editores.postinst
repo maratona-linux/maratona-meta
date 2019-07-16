@@ -1,0 +1,50 @@
+#!/bin/bash
+set -e
+. /usr/share/debconf/confmodule
+# Function which try install a program of Snap in 3 tries.
+# Defaults of requisition:
+#   $1 - Name of package
+#   $2 - Arg1 of snap (--classic or --edge)
+#   $3 - Arg2 of snap (--classic or --edge)
+
+try_install_snap() {
+	try=0
+	while [ $(snap list | grep $1 | wc -l) -eq 0 ] && [ $try -lt 3 ]; do
+		snap install $1 $2 $3
+	    try=$((try+1))
+	done
+
+	# In case of success, return 0. In case of failure, return 1.
+	if [ $(snap list | grep $1 | wc -l) -eq 0 ]; then
+		return 1
+	else
+		return 0
+	fi
+}
+
+flag=1
+while [ $flag -eq 1 ]; do
+	packages=""
+	try_install_snap pycharm-community --classic || packages=$packages"pycharm-community"
+
+	try_install_snap intellij-idea-community --classic --edge || \
+	packages=$packages", intellij-idea-community"
+
+	try_install_snap eclipse --classic || packages=$packages", eclipse"
+
+	if [ "$packages" != "" ]; then
+		db_subst maratona-editores/question_try_again package $packages || true
+		db_input high maratona-editores/question_try_again || true
+		db_go || true
+		db_get maratona-editores/question_try_again || true
+		if [ "$RET" == "Later" ]; then
+			flag=0
+			db_input high maratona-editores/notice || true
+			db_go || true
+			db_get maratona-editores/notice
+		fi
+	else
+		flag=0
+	fi
+done
+
