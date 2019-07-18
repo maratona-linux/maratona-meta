@@ -55,13 +55,14 @@ if [[ "$casperok" == "false" ]]; then
   cp -a /etc/skel ~icpc
   chown -R icpc:users ~icpc
   echo "."
-  # Os arquivos de configuração dos editores do maratona estão no arquivo
-  # maratona-desktop-configs.tar.gz que são mantidos no skel e quando o usuario
-  # icpc é recriado, é copiado para a home do icpc, extraido e excluido (o
-  # .tar.gz)
-  [ -f /home/icpc/maratona-desktop-configs.tar.xz ] && \
-  tar -xf /home/icpc/maratona-desktop-configs.tar.xz -C /home/icpc/ && \
-  rm /home/icpc/maratona-desktop-configs.tar.xz
+  # Os arquivos de configuração dos editores do maratona estão no diretório
+  # usr/share/maratona-usuario-icpc/editores-config que são mantidos no skel
+  # e quando o usuario icpc é recriado, é copiado para a home do icpc,
+  # extraido e excluido (o .tar.gz)
+  for config in /usr/share/maratona-usuario-icpc/editores-config/*; do
+    [[ ! -e "$config" ]] && continue
+    tar -xf $config -C /home/icpc/
+  done
 
   chown -R icpc:users ~icpc
 
