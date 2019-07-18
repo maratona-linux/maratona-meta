@@ -1,0 +1,9 @@
+debian/files
+debian/*log
+debian/*.substvars
+debian/.debhelper
+debian/maratona-conflitos/
+debian/maratona-desktop-latam/
+debian/maratona-desktop/
+debian/maratona-essential/
+debian/maratona-usuario-icpc/
