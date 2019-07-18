@@ -10,8 +10,8 @@ override_dh_auto_install:
 	cp gdict/default.desktop debian/maratona-desktop-latam/usr/share/gdict-1.0/sources/
 
 	# Arquivo de configuração dos editores
-	mkdir -p debian/maratona-usuario-icpc/etc/skel/
-	cp maratona-editores-config/* debian/maratona-usuario-icpc/etc/skel/
+	mkdir -p debian/maratona-usuario-icpc/usr/share/maratona-usuario-icpc/editores-config/
+	cp maratona-editores-config/* debian/maratona-usuario-icpc/usr/share/maratona-usuario-icpc/editores-config/
 
 	# Service para zerar home no reboot via systemd
 	mkdir -p debian/maratona-usuario-icpc/lib/systemd/system/
