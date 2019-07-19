@@ -16,13 +16,15 @@ override_dh_auto_install:
 	# Service para zerar home no reboot via systemd
 	mkdir -p debian/maratona-usuario-icpc/lib/systemd/system/
 	cp usuario-icpc-service/maratona-usuario-icpc.service debian/maratona-usuario-icpc/lib/systemd/system/
+	cp usuario-icpc-service/icpc-clean-homed.service debian/maratona-usuario-icpc/lib/systemd/system/
 
 	mkdir -p debian/maratona-usuario-icpc/usr/sbin/
-	cp scripts-administrativos/zera-home-icpc debian/maratona-usuario-icpc/usr/sbin/
-	chmod a+x debian/maratona-usuario-icpc/usr/sbin/zera-home-icpc
+	install scripts-administrativos/zera-home-icpc debian/maratona-usuario-icpc/usr/sbin/
+	install scripts-administrativos/icpc-clean-homed debian/maratona-usuario-icpc/usr/sbin/
 	mkdir -p debian/maratona-usuario-icpc/usr/bin
 	cp scripts-administrativos/clean-icpc-on-reboot debian/maratona-usuario-icpc/usr/bin/
 	chmod a+x debian/maratona-usuario-icpc/usr/bin/clean-icpc-on-reboot
+	install scripts-administrativos/clean-home-now debian/maratona-usuario-icpc/usr/bin/
 	# Script para ser inicializado no começo da secao para marcar os atalhos
 	# como confiaveis
 	mkdir -p debian/maratona-usuario-icpc/etc/profile.d/

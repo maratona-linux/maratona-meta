@@ -16,7 +16,7 @@ if [ $? == 0 ]; then
 fi
 
 # Adiciona o "servico" do zera-home-icpc para executar na inicializao
-systemctl enable maratona-usuario-icpc.service
+systemctl enable maratona-usuario-icpc.service icpc-clean-homed.service
 
 # Colocando para o usuario icpc ter sua home zerada no boot criando o arquivo
 # .clean-home que faz o servico do usuario icpc ser executado
