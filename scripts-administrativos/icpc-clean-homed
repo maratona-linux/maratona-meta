@@ -22,10 +22,13 @@ while true; do
   l="$(< $FIFO)"
   ! [[ "$l" =~ "cleannow" ]] && continue
   echo "Start Cleaning"
-  systemctl stop gdm3
   slay -9 icpc
+  sleep 3
+  systemctl stop gdm3
+  sleep 3
   zera-home-icpc -f
   echo "Cleaning is now done"
+  sleep 3
   systemctl start gdm3
 done
 
