@@ -5,7 +5,7 @@ if [ $? == 0 ]; then
   # Se o usuario existe, vai verificar os previlegios dele.
   # Se for root, vai abortar a instalação, caso contrario, irá mudar o grupo de
   # usuario dele.
-  if getent group sudo|grep -q "\<icpc\>"; then
+  if id -Gn icpc|grep -q sudo; then
     echo "Ops. Usuário ICPC com privilégios administrativos. ABORTANDO"
     echo "   Remova o usuário ICPC do grupo sudo"
     exit 1
