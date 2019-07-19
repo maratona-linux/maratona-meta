@@ -1,3 +1,40 @@
+maratona-meta (20190718.3) bionic; urgency=high
+
+  * Check correctly 'icpc' user group on upgrading
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Fri, 19 Jul 2019 13:04:46 -0300
+
+maratona-meta (20190718.2) bionic; urgency=medium
+
+  * dconf/80-keyboards: Add one more keyboard layout
+  * d/control: maratona-usuario-icpc depends on slay package
+  * Created files for a clean-home daemon
+  * Installs icpc-clean-homed and user tools
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Fri, 19 Jul 2019 10:03:26 -0300
+
+maratona-meta (20190718.1) bionic; urgency=medium
+
+  * d/maratona-desktop.postinst: fix code favorite link
+  * d/maratona-desktop.postinst removed creation of dconf/local.d/*
+  * dconf configurations are installed with the package
+  * dconf/20-sleep: disable system sleep when on power
+
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Thu, 18 Jul 2019 19:52:08 -0300
+
+maratona-meta (20190718) bionic; urgency=medium
+
+  * Update editors configuration
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Thu, 18 Jul 2019 18:27:04 -0300
+
+maratona-meta (20190715) bionic; urgency=medium
+
+  * Start 2019 work
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Tue, 16 Jul 2019 00:15:43 -0300
+
 maratona-meta (20181020) bionic; urgency=medium
 
   * Avoid workaround on casper
