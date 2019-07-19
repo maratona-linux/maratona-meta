@@ -82,14 +82,13 @@ cp /usr/share/applications/python3doc.desktop /home/icpc/Desktop/
 chown -R icpc:users /home/icpc/Desktop/
 chmod 755 /home/icpc/Desktop/*
 
-for i in media mnt var opt tmp usr; do
+for i in media mnt var opt tmp usr $(df|grep tmpfs|awk '{print $NF}'); do
   printf "Removing files from: /$i"
   find /$i -user icpc -delete
   echo '.'
 done
 echo
-echo "Tudo feito. Considere um reboot para que os diretórios temporários e"
-echo "tmpfs sejam limpos"
+echo "Tudo feito."
 rm /etc/nologin
 
 exit 0
