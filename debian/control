@@ -37,6 +37,7 @@ Description: Pacote Virtual com as dependências mínimas para o ambiente marato
 
 Package: maratona-usuario-icpc
 Pre-Depends: maratona-linguagens-doc, makepasswd
+Depends: slay
 Conflicts: maratona-skel
 Architecture: all
 Description: Pacote que cria um usuário icpc para o competidor da maratona
