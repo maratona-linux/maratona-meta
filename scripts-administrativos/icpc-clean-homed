@@ -1,0 +1,32 @@
+#!/bin/bash
+
+FIFO="/dev/shm/icpc-clean-homed.fifo"
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+rm -f $FIFO
+
+mkfifo $FIFO || exit 3
+
+chown root.users $FIFO
+chmod g+w $FIFO
+
+function goodexit()
+{
+  rm $FIFO
+  exit 0
+}
+
+trap goodexit SIGTERM
+
+while true; do
+  l="$(< $FIFO)"
+  ! [[ "$l" =~ "cleannow" ]] && continue
+  echo "Start Cleaning"
+  systemctl stop gdm3
+  slay -9 icpc
+  zera-home-icpc -f
+  echo "Cleaning is now done"
+  systemctl start gdm3
+done
+
+rm -f $FIFO

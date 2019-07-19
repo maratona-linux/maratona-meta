@@ -1,0 +1,9 @@
+[Unit]
+Description=Maratona Clean Home Daemon
+
+[Service]
+User=root
+ExecStart=/usr/sbin/icpc-clean-homed
+
+[Install]
+WantedBy=multi-user.target
