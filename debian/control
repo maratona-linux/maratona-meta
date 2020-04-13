@@ -9,7 +9,7 @@ Architecture: all
 Recommends: maratona-desktop-latam
 Conflicts: maratona-skel, libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers, gnome-initial-setup, popularity-contest, gnome-software-common
 Pre-Depends: maratona-essential
-Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, maratona-submission
+Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, maratona-submission, dconf-tools
 Provides: maratona-linux-gconf-user-profile
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
@@ -21,6 +21,7 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 Package: maratona-conflitos
 Architecture: all
 Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers, gnome-initial-setup, popularity-contest, gnome-software-common
+Depends: dconf-tools
 Description: Pacote do Maraton Linux com os conflitos para a maratona
  Este pacote além de remover alguns pacotes desnecessários para a maratona
  também desabilita o funcionamento do:
