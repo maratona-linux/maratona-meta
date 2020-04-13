@@ -1,3 +1,10 @@
+maratona-meta (20190718.4) bionic; urgency=low
+
+  * dconf/80-keyboards: Fix US layout
+  * icpc-clean-homed: Added some time between commands
+
+ -- Bruno Cesar Ribas <brunoribas@gmail.com>  Fri, 19 Jul 2019 14:13:24 -0300
+
 maratona-meta (20190718.3) bionic; urgency=high
 
   * Check correctly 'icpc' user group on upgrading
