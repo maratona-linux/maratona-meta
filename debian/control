@@ -58,3 +58,10 @@ Description: Pacote que adiciona o gnome-dictionary para o ambiente maratona
  deste.
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
+
+Package: maratona-task-data
+Architecture: all
+Depends: tasksel
+Description: Pacote que adiciona o maratona-desktop à lista de tasks do tasksel
+ .
+ É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
