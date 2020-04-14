@@ -35,6 +35,9 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-usuario-icpc/etc/dconf/db/local.d/
 	cp dconf/* debian/maratona-usuario-icpc/etc/dconf/db/local.d/
 
+	mkdir -p debian/maratona-task-data/usr/share/tasksel/descs/
+	cp maratona-task.desc debian/maratona-task-data/usr/share/tasksel/descs/
+
 %:
 	echo "$@"
 	dh $@
