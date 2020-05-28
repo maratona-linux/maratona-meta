@@ -5,9 +5,9 @@
 if whoami |grep -q icpc ; then
 
   for x in $HOME/Desktop/*.desktop ; do
-    [ -f $x ] && gio set $x "metadata::trusted" yes
+    [ -f $x ] && gio set $x "metadata::trusted" true
   done
 
 fi
-#echo "yes" > $HOME/.config/desktop-trusted
+#echo "true" > $HOME/.config/desktop-trusted
 #fi
