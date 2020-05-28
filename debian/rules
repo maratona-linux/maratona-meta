@@ -38,6 +38,9 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-task-data/usr/share/tasksel/descs/
 	cp maratona-task.desc debian/maratona-task-data/usr/share/tasksel/descs/
 
+	mkdir -p debian/maratona-snap-common/usr/share/maratona-snap-common/
+	cp snap-common-script/install_snap.sh debian/maratona-snap-common/usr/share/maratona-snap-common/
+
 %:
 	echo "$@"
 	dh $@
