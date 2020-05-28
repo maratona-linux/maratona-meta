@@ -8,7 +8,7 @@ Package: maratona-desktop
 Architecture: all
 Recommends: maratona-desktop-latam
 Pre-Depends: maratona-essential
-Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, maratona-submission, dconf-tools
+Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, maratona-submission, dconf-cli
 Provides: maratona-linux-gconf-user-profile
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
@@ -19,7 +19,7 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 
 Package: maratona-conflitos
 Architecture: all
-Depends: dconf-tools
+Depends: dconf-cli
 Description: Pacote do Maraton Linux com os conflitos para a maratona
  Este pacote além de remover alguns pacotes desnecessários para a maratona
  também desabilita o funcionamento do:
