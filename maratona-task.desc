@@ -3,7 +3,7 @@ Relevance: 1
 Description: Maratona Linux
   Pacote Virtual que transforma o Ubuntu em Maratona Linux
 Key:
-  ubuntu-desktop
+  ubuntu-desktop-minimal
 Packages: list
   maratona-desktop
 Section: user
