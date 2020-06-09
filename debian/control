@@ -7,9 +7,8 @@ Build-Depends: debhelper
 Package: maratona-desktop
 Architecture: all
 Recommends: maratona-desktop-latam
-Conflicts: maratona-skel, libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers, gnome-initial-setup, popularity-contest, gnome-software-common
 Pre-Depends: maratona-essential
-Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, maratona-submission, dconf-tools
+Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, maratona-submission, dconf-cli
 Provides: maratona-linux-gconf-user-profile
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
@@ -20,8 +19,7 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 
 Package: maratona-conflitos
 Architecture: all
-Conflicts: libreoffice-core, thunderbird, gnome-software, aisleriot, gnome-mahjongg, gnome-mines, gnome-sudoku, libgnome-games-support, libgnome-games-support-common, rhythmbox, nautilus-sendto, bluez, gnome-bluetooth, pulseaudio-module-bluetooth, bluez-cups, bluez-obexd, cheese, cups, mythes-en-us, uno-libs3, transmission-gtk, shotwell, ubuntu-web-launchers, gnome-initial-setup, popularity-contest, gnome-software-common
-Depends: dconf-tools
+Depends: dconf-cli
 Description: Pacote do Maraton Linux com os conflitos para a maratona
  Este pacote além de remover alguns pacotes desnecessários para a maratona
  também desabilita o funcionamento do:
@@ -63,5 +61,12 @@ Package: maratona-task-data
 Architecture: all
 Depends: tasksel
 Description: Pacote que adiciona o maratona-desktop à lista de tasks do tasksel
+ .
+ É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
+
+Package: maratona-snap-common
+Architecture: all
+Depends: snapd
+Description: Pacote Virtual com a função de instalar de snaps do maratona linux
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
