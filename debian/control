@@ -6,9 +6,9 @@ Build-Depends: debhelper
 
 Package: maratona-desktop
 Architecture: all
-Recommends: maratona-desktop-latam
+Recommends: maratona-desktop-latam, maratona-submission
 Pre-Depends: maratona-essential
-Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, maratona-submission, dconf-cli
+Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, dconf-cli
 Provides: maratona-linux-gconf-user-profile
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
@@ -70,3 +70,5 @@ Depends: snapd
 Description: Pacote Virtual com a função de instalar de snaps do maratona linux
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
+
+
