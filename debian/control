@@ -64,10 +64,10 @@ Description: Pacote que adiciona o maratona-desktop à lista de tasks do tasksel
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
 
-Package: maratona-snap-common
+Package: maratona-flatpak-common
 Architecture: all
-Depends: snapd
-Description: Pacote Virtual com a função de instalar de snaps do maratona linux
+Depends: flatpak
+Description: Pacote Virtual com a função de instalação flatpak do maratona linux
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
 
