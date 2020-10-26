@@ -1,3 +1,4 @@
 #!/bin/bash
 
-dpkg-divert --rename --remove /usr/share/gdict-1.0/sources/default.desktop
+dpkg-divert --package maratona-desktop-latam --remove --rename \
+        --divert /usr/share/gdict-1.0/default.desktop.orig /usr/share/gdict-1.0/sources/default.desktop
