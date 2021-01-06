@@ -1,2 +1,2 @@
 [org/gnome/shell]
-favorite-apps = ['firefox_boca.desktop', 'nautilus.desktop', 'org.eclipse.Java.desktop', 'gedit.desktop', 'geany.desktop', 'emacs25.desktop', 'org.kde.kate.desktop', 'codeblocks.desktop', 'gnome-terminal.desktop', 'com.jetbrains.PyCharm-Community.desktop', 'com.jetbrains.IntelliJ-IDEA-Community.desktop', 'com.jetbrains.CLion.desktop', 'com.sublimetext.three.desktop', 'com.visualstudio.code.desktop']
+favorite-apps = ['firefox_boca.desktop', 'nautilus.desktop', 'gnome-terminal.desktop', 'com.jetbrains.CLion.desktop', 'com.jetbrains.IntelliJ-IDEA-Community.desktop', 'com.jetbrains.PyCharm-Community.desktop', 'gedit.desktop', 'codeblocks.desktop', 'com.visualstudio.code.desktop', 'org.eclipse.Java.desktop']
