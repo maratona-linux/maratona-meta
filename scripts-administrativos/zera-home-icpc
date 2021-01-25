@@ -84,6 +84,11 @@ su icpc -c 'dbus-launch gio set /home/icpc/Desktop/javadoc.desktop "metadata::tr
 cp /usr/share/applications/python3doc.desktop /home/icpc/Desktop/ && \
 su icpc -c 'dbus-launch gio set /home/icpc/Desktop/python3doc.desktop "metadata::trusted" true'
 
+[ -f /usr/share/applications/kotlindoc.desktop ] && \
+cp /usr/share/applications/kotlindoc.desktop /home/icpc/Desktop/ && \
+su icpc -c 'dbus-launch gio set /home/icpc/Desktop/kotlindoc.desktop "metadata::trusted" true'
+
+
 # Mudando o dono, pois este script roda como root, então o que ele cria
 # pertence ao root, o que não deve acontecer.
 chown -R icpc:users ~icpc
