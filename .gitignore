@@ -7,3 +7,5 @@ debian/maratona-desktop-latam/
 debian/maratona-desktop/
 debian/maratona-essential/
 debian/maratona-usuario-icpc/
+debian/maratona-flatpak-common/
+debian/maratona-task-data/
