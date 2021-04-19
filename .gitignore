@@ -9,3 +9,5 @@ debian/maratona-essential/
 debian/maratona-usuario-icpc/
 debian/maratona-flatpak-common/
 debian/maratona-task-data/
+debian/debhelper-build-stamp
+debian/maratona-usuario-icpc.postrm.debhelper
