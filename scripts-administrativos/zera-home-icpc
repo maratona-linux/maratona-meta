@@ -84,6 +84,26 @@ su icpc -c 'dbus-launch gio set /home/icpc/Desktop/javadoc.desktop "metadata::tr
 cp /usr/share/applications/python3doc.desktop /home/icpc/Desktop/ && \
 su icpc -c 'dbus-launch gio set /home/icpc/Desktop/python3doc.desktop "metadata::trusted" true'
 
+[ -f /usr/share/applications/kotlindoc.desktop ] && \
+cp /usr/share/applications/kotlindoc.desktop /home/icpc/Desktop/ && \
+su icpc -c 'dbus-launch gio set /home/icpc/Desktop/kotlindoc.desktop "metadata::trusted" true'
+
+# Bloquear a execução do diálogo de boas vindas no primeiro login do usuário
+echo "yes" > /home/icpc/.config/gnome-initial-setup-done
+
+# Configurar JDK/JRE do sistema para IntelliJ e VSCode em Flatpak
+# Ambas IDEs podem acessar arquivos normais (filesystem=host)
+# (ver https://docs.flatpak.org/en/latest/sandbox-permissions.html)
+FLATPAK_JAVA_PATH="/var/run/host/usr/lib/jvm/java-11-openjdk-amd64"
+# VSCode
+mkdir -p '/home/icpc/.var/app/com.visualstudio.code/config/Code/User/'
+echo -e "{\n\t\"java.home\": \"${FLATPAK_JAVA_PATH}\"\n}" > '/home/icpc/.var/app/com.visualstudio.code/config/Code/User/settings.json'
+
+# IntelliJ
+# É normal o link aparecer quebrado, já que é um caminho usado apenas pelo Flatpak
+mkdir '/home/icpc/.jdks'
+ln -s "${FLATPAK_JAVA_PATH}" '/home/icpc/.jdks/java-11-openjdk-amd64'
+
 # Mudando o dono, pois este script roda como root, então o que ele cria
 # pertence ao root, o que não deve acontecer.
 chown -R icpc:users ~icpc
