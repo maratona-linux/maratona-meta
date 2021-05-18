@@ -1,3 +1,44 @@
+maratona-meta (20210517) focal; urgency=medium
+
+  [ Guilherme Deusdará ]
+  * Adicionando o pacote maratona-task-data (#36)
+
+  [ Guilherme Banci ]
+  * removing maratona-editores and maratona-linguagens files
+  * maratona-task-data depends on ubuntu-desktop-minimal
+  * removing maratona-desktop conflicts.
+  * dconf-tools changed to dconf-cli
+  * creating maratona-snap-common
+  * changing desktop-icons metadata::trusted to true
+  * Updating maratona-editores-config
+  * Adding Clion to favorites
+  * updating vscode extensions
+  * maratona-submission is now recommended in maratona-desktop
+  * removing netbeans from favorites
+
+  [ Guilherme Deusdará ]
+  * switching from snapd to flatpak
+  * updating maratona-editores-config
+  * updating favorites files
+  * fixing divert
+  * changing maratona-usuario-icpc
+  * removing deprecated python2-doc
+
+  [ Guilherme Banci ]
+  * ajusting favorites
+  * add kotlin doc to desktop
+
+  [ Davi Antônio da Silva Santos ]
+  * Update .gitignore with flatpak and task artifacts
+  * Enable accessibility menu in default config
+  * Remove initial setup dialogue
+  * Fix Firefox_Boca's desktop entry
+  * Autoconfigure JDK/JRE for IntelliJ and VSCode
+  * Update .gitignore
+  * Bump compat from 9 to 12
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Mon, 17 May 2021 23:01:09 -0300
+
 maratona-meta (20190718.4) bionic; urgency=low
 
   * dconf/80-keyboards: Fix US layout
