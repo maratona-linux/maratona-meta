@@ -26,7 +26,7 @@ fi
 
 echo "Cleaning ICPC home..." > /etc/nologin
 # Gera uma senha de inicio.
-pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
+pass=$(echo -n icpc$RANDOM | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
 
 # Verifica a existencia do usuario ICPC
 # Caso ele não exista, ele deve ser criado com a senha criada anteriormente.
@@ -41,9 +41,9 @@ if ((RESP != 0 )); then
 	fi
 fi
 
-# De qualquer modo, o seu diretorio tem que ser recriado.
-printf "Restaurando senha"
+printf "Gerando senha aleatória"
 # E o usermod será pra todos.
+pass=$(echo -n ${RANDOM}icpc${RANDOM} | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
 usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
 echo "."
 
@@ -115,6 +115,12 @@ for i in media mnt var opt tmp usr $(df|grep tmpfs|awk '{print $NF}'); do
   find /$i -user icpc -delete
   echo '.'
 done
+
+printf "Restaurando senha"
+# E o usermod será pra todos.
+pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
+usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
+echo "."
 
 echo
 echo "Tudo feito."
