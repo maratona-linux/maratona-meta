@@ -17,7 +17,7 @@ fi
 # diretorio, e o usuario não vai existir, o que deve cria-lo.
 getent passwd icpc &>/dev/null
 RESP="$?"
-if [[ ! -e "/home/icpc/.clean-home" ]] && [[ "$1" != "-f" ]] && ((RESP == 0)) ; then
+if [[ -d "/home/icpc" ]] && [[ ! -e "/home/icpc/.clean-home" ]] && [[ "$1" != "-f" ]] && ((RESP == 0)) ; then
   echo "No /home/icpc/.clean-home file found"
   echo "If you wish to clean anyway run:"
   echo "  $0 -f"
