@@ -1,3 +1,17 @@
+maratona-meta (20210517.1) focal; urgency=medium
+
+  [ Bruno Ribas ]
+  * dconf/80-keyboards: Add `latam` layout and set `us` as default
+  * zera-home-icpc: Runs if there is no /home/icpc
+  * zera-home-icpc: Creates a random password for ICPC when cleaning
+
+  [ Davi Antônio da Silva Santos ]
+  * Remove eclipse from favourites
+  * Update configuration files for 20210517
+  * Update changelog for version 20210517.1
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Tue, 25 May 2021 21:01:49 -0300
+
 maratona-meta (20210517) focal; urgency=medium
 
   [ Guilherme Deusdará ]
