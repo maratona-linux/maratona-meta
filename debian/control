@@ -1,14 +1,16 @@
 Source: maratona-meta
 Section: metapackages
 Priority: optional
-Maintainer: Bruno Ribas <brunoribas@utfpr.edu.br>
+Maintainer: Bruno César Ribas <bruno.ribas@unb.br>
 Build-Depends: debhelper-compat (= 12)
+Vcs-Git: https://github.com/maratona-linux/maratona-meta.git
+Vcs-Browser: https://github.com/maratona-linux/maratona-meta
 
 Package: maratona-desktop
 Architecture: all
 Recommends: maratona-desktop-latam, maratona-submission
 Pre-Depends: maratona-essential
-Depends: ssh, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, dconf-cli
+Depends: ssh, firefox, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, dconf-cli
 Provides: maratona-linux-gconf-user-profile
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
@@ -20,10 +22,11 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 Package: maratona-conflitos
 Architecture: all
 Depends: dconf-cli
-Description: Pacote do Maraton Linux com os conflitos para a maratona
- Este pacote além de remover alguns pacotes desnecessários para a maratona
- também desabilita o funcionamento do:
-  - Acesso a usuário guest
+Description: Pacote do Maratona com restrições para o ambiente
+ Este desabilita o funcionamento do:
+  - ssh para o usuário icpc
+  - visualização da lista de usuários na tela de login
+  - notificações do Ubuntu
 
 Package: maratona-essential
 Architecture: all
@@ -50,25 +53,23 @@ Description: Pacote que cria um usuário icpc para o competidor da maratona
 Package: maratona-desktop-latam
 Architecture: all
 Pre-Depends: gnome-dictionary
-Depends: dictd, dict-freedict-eng-por, dict-freedict-eng-spa
+Depends: dictd, dict-freedict-eng-por, dict-freedict-eng-spa, maratona-desktop
 Description: Pacote que adiciona o gnome-dictionary para o ambiente maratona
  Esse pacote cria um servidor dictd local, no qual o gnome-dictionary faz uso
  deste.
- .
- É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
 
 Package: maratona-task-data
 Architecture: all
 Depends: tasksel
 Description: Pacote que adiciona o maratona-desktop à lista de tasks do tasksel
- .
- É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
+ Este pacote instala uma task que instala o pacote maratona-desktop com
+ dependência no pacote ubuntu-desktop-minimal.
 
 Package: maratona-flatpak-common
 Architecture: all
 Depends: flatpak
-Description: Pacote Virtual com a função de instalação flatpak do maratona linux
- .
- É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
+Description: Pacote Virtual com a função de instalação flatpak do Maratona Linux
+ Este pacote instala o flatpak e scripts usados pelo Maratona Linux para
+ instalar programas empacotados nesse formato.
 
 
