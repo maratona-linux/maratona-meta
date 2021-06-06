@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 #recolocando o autostart do update-notifier
 dpkg-divert --rename --remove /etc/xdg/autostart/update-notifier.desktop
