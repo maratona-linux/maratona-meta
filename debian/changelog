@@ -1,3 +1,22 @@
+maratona-meta (20210517.2) focal; urgency=medium
+
+  * Update maintainer, dependencies and descriptions
+    - updates maintainer's name and email
+    - adds VCS information
+    - adds firefox as a dependency from maratona-desktop
+    - updates the descriptions of maratona-conflitos, maratona-task-data and
+      maratona-flatpak-common (fixes Lintian warning
+      extended-description-contains-empty-paragraph, check issue #50)
+    - adds maratona-desktop as a dependency from maratona-desktop-latam
+  * Set exit on failure for postinst and postrm
+    - adds set -e for post installation and removal scripts in order to fix
+      Lintian maintainer-script-ignores-errors, check issue #50)
+    - modify maratona-usuario-icpc.postinst to eliminate indirect status
+      checks that would cause an abnormal execution
+  * Update machine-readable copyright file
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Mon, 28 Jun 2021 21:02:23 -0300
+
 maratona-meta (20210517.1) focal; urgency=medium
 
   [ Bruno Ribas ]

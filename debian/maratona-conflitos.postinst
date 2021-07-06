@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 #removendo o autostart do update-notifier
 dpkg-divert --divert /etc/xdg/update-notifier.desktop-desativado.orig \
