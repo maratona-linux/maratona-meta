@@ -62,10 +62,6 @@ for config in /usr/share/maratona-usuario-icpc/editores-config/*; do
   tar -xf $config -C /home/icpc/
 done
 
-# copiando arquivos das extenções do vscode
-mkdir -p /home/icpc/.var/app/com.visualstudio.code/data/vscode/extensions/
-cp -r /usr/share/maratona-vscode-extensions/* /home/icpc/.var/app/com.visualstudio.code/data/vscode/extensions/
-
 # criando arquivo para vscode não mostrar warning ao iniciar pela primeira vez
 mkdir -p /home/icpc/.var/app/com.visualstudio.code/config/
 touch /home/icpc/.var/app/com.visualstudio.code/config/flatpak-vscode-first-run
@@ -91,13 +87,17 @@ su icpc -c 'dbus-launch gio set /home/icpc/Desktop/kotlindoc.desktop "metadata::
 # Bloquear a execução do diálogo de boas vindas no primeiro login do usuário
 echo "yes" > /home/icpc/.config/gnome-initial-setup-done
 
-# Configurar JDK/JRE do sistema para IntelliJ e VSCode em Flatpak
-# Ambas IDEs podem acessar arquivos normais (filesystem=host)
+# Configurar JDK/JRE do sistema para IntelliJ
+# A IDE pode acessar arquivos normais (filesystem=host)
 # (ver https://docs.flatpak.org/en/latest/sandbox-permissions.html)
 FLATPAK_JAVA_PATH="/var/run/host/usr/lib/jvm/java-11-openjdk-amd64"
+
 # VSCode
-mkdir -p '/home/icpc/.var/app/com.visualstudio.code/config/Code/User/'
-echo -e "{\n\t\"java.home\": \"${FLATPAK_JAVA_PATH}\"\n}" > '/home/icpc/.var/app/com.visualstudio.code/config/Code/User/settings.json'
+# O caminho só existirá se o maratona-vscode-extensions estiver instalado
+if [ -d '/var/lib/maratona-vscode-extensions/extensions' ] ; then
+	mkdir -p '/home/icpc/.var/app/com.visualstudio.code/data/vscode/extensions/'
+	cp -R '/var/lib/maratona-vscode-extensions/extensions' '/home/icpc/.var/app/com.visualstudio.code/data/vscode'
+fi
 
 # IntelliJ
 # É normal o link aparecer quebrado, já que é um caminho usado apenas pelo Flatpak
@@ -108,7 +108,6 @@ ln -s "${FLATPAK_JAVA_PATH}" '/home/icpc/.jdks/java-11-openjdk-amd64'
 # pertence ao root, o que não deve acontecer.
 chown -R icpc:users ~icpc
 chmod 755 /home/icpc/Desktop/*
-
 
 for i in media mnt var opt tmp usr $(df|grep tmpfs|awk '{print $NF}'); do
   printf "Removing files from: /$i"
@@ -125,5 +124,8 @@ echo "."
 echo
 echo "Tudo feito."
 rm /etc/nologin
+
+# Garantir modificações no disco antes de sair
+sync
 
 exit 0
