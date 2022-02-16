@@ -1,3 +1,16 @@
+maratona-meta (20210517.3) focal; urgency=medium
+
+  * Fix the installation of VSCode extensions
+    - pre-package the extensions instead of downloading them at the
+      installation
+    - drop Visual Studio Code Java extensions
+  * Enable specifying the package's version
+    - update the helper script to enforce a specific version of a flatpak to
+      be installed
+  * Update the Jetbrains IDE's preferences
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Tue, 15 Feb 2022 15:33:27 -0300
+
 maratona-meta (20210517.2) focal; urgency=medium
 
   * Update maintainer, dependencies and descriptions
