@@ -22,11 +22,20 @@ Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
 Package: maratona-conflitos
 Architecture: all
 Depends: dconf-cli
+Conflicts: snapd
 Description: Pacote do Maratona com restrições para o ambiente
  Este desabilita o funcionamento do:
   - ssh para o usuário icpc
   - visualização da lista de usuários na tela de login
   - notificações do Ubuntu
+ .
+ Este pacote também remove o snapd, e por isso é recomendável que seja
+ instalado apenas nas máquinas que serão usadas na competição.
+ .
+ A remoção completa (purge) do snapd, que também incluirá a desinstalação dos
+ pacotes snap no sistema ocorrerá somente se houver a opção `purge` no momento
+ da instalação do maratona-conflitos ou de algum pacote que dependa dele, como
+ o maratona-desktop.
 
 Package: maratona-essential
 Architecture: all
