@@ -1,3 +1,12 @@
+maratona-meta (20210517.4) focal; urgency=medium
+
+  * Add conflict with snapd
+    - force the removal of snapd when installing maratona-conflitos
+    - update description documenting the need of purging the snapd package in
+      order to fully remove it form the system
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Fri, 18 Feb 2022 12:08:02 -0300
+
 maratona-meta (20210517.3) focal; urgency=medium
 
   * Fix the installation of VSCode extensions
