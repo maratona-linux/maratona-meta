@@ -2,7 +2,7 @@ Source: maratona-meta
 Section: metapackages
 Priority: optional
 Maintainer: Bruno César Ribas <bruno.ribas@unb.br>
-Build-Depends: debhelper-compat (= 12)
+Build-Depends: debhelper-compat (= 13)
 Vcs-Git: https://github.com/maratona-linux/maratona-meta.git
 Vcs-Browser: https://github.com/maratona-linux/maratona-meta
 
