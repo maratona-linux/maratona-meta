@@ -1,3 +1,12 @@
+maratona-meta (20220517) jammy; urgency=medium
+
+  * Bump debhelper compat from 12 to 13
+  * Update copyright years
+  * Drop conflict with snapd
+  * Release 20220517
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Thu, 19 May 2022 17:19:30 -0300
+
 maratona-meta (20210517.4) focal; urgency=medium
 
   * Add conflict with snapd
