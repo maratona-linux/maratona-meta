@@ -2,12 +2,12 @@
 
 exec &> /var/log/zera-home-icpc.log
 
-if ! whoami|grep -q root; then
-  echo "Este comando deve ser executado com privilégios de ROOT."
-  echo "Considere colocar o comando \"sudo\" a frente da chamada."
-  echo
-  echo "Uso: sudo $0"
-  exit 1
+if ! whoami | grep -q root; then
+	echo "Este comando deve ser executado com privilégios de ROOT."
+	echo "Considere colocar o comando \"sudo\" a frente da chamada."
+	echo
+	echo "Uso: sudo $0"
+	exit 1
 fi
 
 # Se o usuario icpc não existe, o script deve passar adiante para cria-lo.
@@ -17,49 +17,51 @@ fi
 # diretorio, e o usuario não vai existir, o que deve cria-lo.
 getent passwd icpc &>/dev/null
 RESP="$?"
-if [[ -d "/home/icpc" ]] && [[ ! -e "/home/icpc/.clean-home" ]] && [[ "$1" != "-f" ]] && ((RESP == 0)) ; then
-  echo "No /home/icpc/.clean-home file found"
-  echo "If you wish to clean anyway run:"
-  echo "  $0 -f"
-  exit 1
+if [[ -d '/home/icpc' ]] && [[ ! -e '/home/icpc/.clean-home' ]] && [[ "$1" != "-f" ]] && ((RESP == 0)) ; then
+	echo "No /home/icpc/.clean-home file found"
+	echo "If you wish to clean anyway run:"
+	echo "  $0 -f"
+	exit 1
 fi
 
 echo "Cleaning ICPC home..." > /etc/nologin
+
 # Gera uma senha de inicio.
-pass=$(echo -n icpc$RANDOM | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
+pass=$(echo -n "icpc${RANDOM}" | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
 
 # Verifica a existencia do usuario ICPC
 # Caso ele não exista, ele deve ser criado com a senha criada anteriormente.
-printf "Verificando existência do usuário \"icpc\""
+printf "Verificando existência do usuário \"icpc\"\n"
 if ((RESP != 0 )); then
 	echo "."
 	echo "Usuario não exite, criando..".
-	useradd -d /home/icpc -k /etc/skel -m -p "$pass" -s /bin/bash -g users icpc
+	useradd --home-dir '/home/icpc' --skel '/etc/skel' --create-home --password "${pass}" --shell '/bin/bash' --gid users icpc
 
 	if ! grep -q "^icpc " /etc/security/limits.conf; then
-		echo "icpc          hard nproc 1024" >> /etc/security/limits.conf
+		echo "icpc hard nproc 1024" >> /etc/security/limits.conf
 	fi
 fi
 
-printf "Gerando senha aleatória"
-# E o usermod será pra todos.
-pass=$(echo -n ${RANDOM}icpc${RANDOM} | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
-usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
+printf "Gerando senha aleatória\n"
+
+# Gerando nova senha para evitar login indesejado
+pass=$(echo -n "${RANDOM}icpc${RANDOM}" | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
+usermod --home '/home/icpc' --password "${pass}" --shell '/bin/bash' --gid users icpc
 echo "."
 
-printf "Recriando diretório home"
+printf "Recriando diretório home\n"
 rm -rf ~icpc
 cp -a /etc/skel ~icpc
 chown -R icpc:users ~icpc
 echo "."
 
 # Os arquivos de configuração dos editores do maratona estão no diretório
-# usr/share/maratona-usuario-icpc/editores-config que são mantidos no skel
+# '/usr/share/maratona-usuario-icpc/editores-config' que são mantidos no skel
 # e quando o usuario icpc é recriado, é copiado para a home do icpc,
 # extraido e excluido (o .tar.gz)
 for config in /usr/share/maratona-usuario-icpc/editores-config/*; do
-  [[ ! -e "$config" ]] && continue
-  tar -xf $config -C /home/icpc/
+	[[ ! -e "${config}" ]] && continue
+	tar -xf "${config}" -C /home/icpc/
 done
 
 # criando arquivo para vscode não mostrar warning ao iniciar pela primeira vez
@@ -67,24 +69,31 @@ mkdir -p /home/icpc/.var/app/com.visualstudio.code/config/
 touch /home/icpc/.var/app/com.visualstudio.code/config/flatpak-vscode-first-run
 
 # Copiando os atalhos da documentação para o o Desktop
+# Os atalhos precisam ser marcados como confiáveis na base de dados do GIO, e
+# para isso, o DBUS deve estar funcionando, e o usuário que usará os atalhos
+# deve ser o responsável por essa ação
 mkdir -p /home/icpc/Desktop/
-[ -f /usr/share/applications/cppreference.desktop ] && \
-cp /usr/share/applications/cppreference.desktop /home/icpc/Desktop/ && \
-su icpc -c 'dbus-launch gio set /home/icpc/Desktop/cppreference.desktop "metadata::trusted" true'
 
-[ -f /usr/share/applications/javadoc.desktop ] && \
-cp /usr/share/applications/javadoc.desktop /home/icpc/Desktop/ && \
-su icpc -c 'dbus-launch gio set /home/icpc/Desktop/javadoc.desktop "metadata::trusted" true'
+desktop_files=(
+"/usr/share/applications/cppreference.desktop"
+"/usr/share/applications/javadoc.desktop"
+"/usr/share/applications/python3doc.desktop"
+"/usr/share/applications/kotlindoc.desktop"
+)
 
-[ -f /usr/share/applications/python3doc.desktop ] && \
-cp /usr/share/applications/python3doc.desktop /home/icpc/Desktop/ && \
-su icpc -c 'dbus-launch gio set /home/icpc/Desktop/python3doc.desktop "metadata::trusted" true'
+readonly desktop_files
 
-[ -f /usr/share/applications/kotlindoc.desktop ] && \
-cp /usr/share/applications/kotlindoc.desktop /home/icpc/Desktop/ && \
-su icpc -c 'dbus-launch gio set /home/icpc/Desktop/kotlindoc.desktop "metadata::trusted" true'
+# A expansão da variável é modificada para se obter somente o nome do arquivo a
+# partir do caminho completo
+for dfile in "${desktop_files[@]}"; do
+	if [ -f "${dfile}" ]; then
+		cp "${dfile}" /home/icpc/Desktop
+		su icpc --command="dbus-launch gio set /home/icpc/Desktop/${dfile##*/} \"metadata::trusted\" true"
+	fi
+done
 
 # Bloquear a execução do diálogo de boas vindas no primeiro login do usuário
+mkdir -p /home/icpc/.config
 echo "yes" > /home/icpc/.config/gnome-initial-setup-done
 
 # Configurar JDK/JRE do sistema para IntelliJ
@@ -109,16 +118,18 @@ ln -s "${FLATPAK_JAVA_PATH}" '/home/icpc/.jdks/java-11-openjdk-amd64'
 chown -R icpc:users ~icpc
 chmod 755 /home/icpc/Desktop/*
 
-for i in media mnt var opt tmp usr $(df|grep tmpfs|awk '{print $NF}'); do
-  printf "Removing files from: /$i"
-  find /$i -user icpc -delete
-  echo '.'
+for i in /media /mnt /var /opt /tmp /usr $(df | grep tmpfs | awk '{print $NF}'); do
+	printf "Removing files from: %s\n" "${i}"
+	find "${i}" -user icpc -delete -exec printf "Deleted %s\n" {} \;
+	echo '.'
 done
 
-printf "Restaurando senha"
-# E o usermod será pra todos.
-pass=$(echo -n icpc | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
-usermod -d /home/icpc -p "$pass" -s /bin/bash -g users icpc
+printf "Restaurando senha\n"
+
+# Configurar a senha e o shell corretos sem alterar as configurações feitas no
+# diretório /home/icpc
+pass=$(echo -n 'icpc' | makepasswd --clearfrom - --crypt-md5 | awk '{print $NF}')
+usermod --home '/home/icpc' --move-home --password "${pass}" --shell '/bin/bash' --gid users icpc
 echo "."
 
 echo
