@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if ! whoami |grep -q icpc; then
-  printf "This is user '$USER', you should run this script as user 'icpc'\n"
+  printf "This is user '%s', you should run this script as user 'icpc'\n" "${USER}"
   exit 1
 fi
 
