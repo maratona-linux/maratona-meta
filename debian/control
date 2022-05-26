@@ -10,7 +10,7 @@ Package: maratona-desktop
 Architecture: all
 Recommends: maratona-desktop-latam, maratona-submission
 Pre-Depends: maratona-essential
-Depends: ssh, firefox, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, dconf-cli
+Depends: ssh, epiphany-browser, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, dconf-cli
 Provides: maratona-linux-gconf-user-profile
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o

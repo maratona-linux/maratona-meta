@@ -3,7 +3,7 @@
 override_dh_auto_install:
 	# Firefox copiado e renomeado
 	mkdir -p debian/maratona-desktop/usr/share/applications/
-	cp firefox.desktop debian/maratona-desktop/usr/share/applications/firefox_boca.desktop
+	cp epiphany_boca.desktop debian/maratona-desktop/usr/share/applications/
 
 	# Arquivo para substituir o dicionario default.
 	mkdir -p debian/maratona-desktop-latam/usr/share/gdict-1.0/sources/
