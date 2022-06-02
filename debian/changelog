@@ -1,3 +1,19 @@
+maratona-meta (20220531) jammy; urgency=medium
+
+  * Fix broken shortcuts and start-up experience
+    - depend on dbus-x11
+    - update the values configured for the trusted metadata
+    - fix mixed indentation and repeated code
+  * Fix shellcheck warnings
+  * Replace firefox with epiphany-browser (GNOME Web)
+    - depend on epiphany-browser instead of firefox
+    - remove references to firefox
+    - add epiphany-browser to the favorites
+    - add a modified .desktop file pointing epiphany-web to the BOCA URL
+  * Restore conflict with snapd
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Wed, 01 Jun 2022 19:56:44 -0300
+
 maratona-meta (20220517) jammy; urgency=medium
 
   * Bump debhelper compat from 12 to 13
