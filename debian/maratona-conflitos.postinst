@@ -35,4 +35,17 @@ show-apport-crasher=false
 end-system-uids=2000
 EOF
 
+# Definir um valor padrão para o user-agent do epiphany
+cat > /etc/dconf/db/local.d/00-epiphany-user-agent <<EOF
+[org/gnome/epiphany/web]
+user-agent='Mozilla/5.0 (Maratona Linux) Epiphany/42.1'
+EOF
+
+# Bloquear a modificação a nível de sistema do user-agent epiphany
+mkdir -p /etc/dconf/db/local.d/locks
+cat > /etc/dconf/db/local.d/locks/00-epiphany-user-agent <<EOF
+# prevent changes to epiphany's user-agent
+/org/gnome/epiphany/web/user-agent
+EOF
+
 dconf update
