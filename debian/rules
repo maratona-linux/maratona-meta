@@ -9,29 +9,6 @@ override_dh_auto_install:
 	mkdir -p debian/maratona-desktop-latam/usr/share/gdict-1.0/sources/
 	cp gdict/default.desktop debian/maratona-desktop-latam/usr/share/gdict-1.0/sources/
 
-	# Arquivo de configuração dos editores
-	mkdir -p debian/maratona-usuario-icpc/usr/share/maratona-usuario-icpc/editores-config/
-	cp maratona-editores-config/* debian/maratona-usuario-icpc/usr/share/maratona-usuario-icpc/editores-config/
-
-	# Service para zerar home no reboot via systemd
-	mkdir -p debian/maratona-usuario-icpc/lib/systemd/system/
-	cp usuario-icpc-service/maratona-usuario-icpc.service debian/maratona-usuario-icpc/lib/systemd/system/
-	cp usuario-icpc-service/icpc-clean-homed.service debian/maratona-usuario-icpc/lib/systemd/system/
-
-	mkdir -p debian/maratona-usuario-icpc/usr/sbin/
-	install scripts-administrativos/zera-home-icpc debian/maratona-usuario-icpc/usr/sbin/
-	install scripts-administrativos/icpc-clean-homed debian/maratona-usuario-icpc/usr/sbin/
-	mkdir -p debian/maratona-usuario-icpc/usr/bin
-
-	cp scripts-administrativos/clean-icpc-on-reboot debian/maratona-usuario-icpc/usr/bin/
-	chmod a+x debian/maratona-usuario-icpc/usr/bin/clean-icpc-on-reboot
-	install scripts-administrativos/clean-home-now debian/maratona-usuario-icpc/usr/bin/
-
-	mkdir -p debian/maratona-usuario-icpc/etc/polkit-1/localauthority/90-mandatory.d/
-	cp polkit-1/*pkla debian/maratona-usuario-icpc/etc/polkit-1/localauthority/90-mandatory.d/
-	mkdir -p debian/maratona-usuario-icpc/etc/dconf/db/local.d/
-	cp dconf/* debian/maratona-usuario-icpc/etc/dconf/db/local.d/
-
 	mkdir -p debian/maratona-task-data/usr/share/tasksel/descs/
 	cp maratona-task.desc debian/maratona-task-data/usr/share/tasksel/descs/
 

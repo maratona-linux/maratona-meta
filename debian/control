@@ -49,19 +49,6 @@ Description: Pacote Virtual com as dependências mínimas para o ambiente marato
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
 
-Package: maratona-usuario-icpc
-Pre-Depends: maratona-linguagens-doc, makepasswd, maratona-vscode-extensions
-Depends: slay, dbus-x11
-Conflicts: maratona-skel
-Architecture: all
-Description: Pacote que cria um usuário icpc para o competidor da maratona
- Este pacote cria o usuário sem privilégios administrativos para competição.
- .
- Também é fornecido neste pacote alguns comandos admnistrativos:
-   - zera-home-icpc : Apaga todos os arquivos do home do usuário icpc
-      + este script é utilizado após o warmup para o home do usuário
-      iniciar vazio durante a competição.
-
 Package: maratona-desktop-latam
 Architecture: all
 Pre-Depends: gnome-dictionary
