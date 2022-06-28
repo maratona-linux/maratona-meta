@@ -1,3 +1,13 @@
+maratona-meta (20220627) jammy; urgency=medium
+
+  * Define and lock epiphany's user-agent
+  * Make maratona-usuario-icpc an independent package
+  * Make flatpak script depend on ca-certificates
+  * Emancipate maratona-flatpak-common
+  * Remove remainders from maratona-usuario-icpc
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Mon, 27 Jun 2022 22:34:46 -0300
+
 maratona-meta (20220531) jammy; urgency=medium
 
   * Fix broken shortcuts and start-up experience
