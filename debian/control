@@ -63,11 +63,3 @@ Depends: tasksel
 Description: Pacote que adiciona o maratona-desktop à lista de tasks do tasksel
  Este pacote instala uma task que instala o pacote maratona-desktop com
  dependência no pacote ubuntu-desktop-minimal.
-
-Package: maratona-flatpak-common
-Architecture: all
-Depends: flatpak, ca-certificates
-Description: Pacote Virtual com a função de instalação flatpak do Maratona Linux
- Este pacote instala o flatpak e scripts usados pelo Maratona Linux para
- instalar programas empacotados nesse formato.
-
