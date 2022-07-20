@@ -4,6 +4,7 @@
 
 [Unit]
 Description=Maratona Zera Home ICPC Service
+Before=gdm.service
 
 [Service]
 Type=oneshot
