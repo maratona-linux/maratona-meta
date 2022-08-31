@@ -1,3 +1,10 @@
+maratona-meta (20220830) jammy; urgency=medium
+
+  [ Bruno Ribas ]
+  * maratona-usuario-icpc.service: BEFORE gdm.service unit
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Tue, 30 Aug 2022 22:27:07 -0300
+
 maratona-meta (20220627) jammy; urgency=medium
 
   * Define and lock epiphany's user-agent
