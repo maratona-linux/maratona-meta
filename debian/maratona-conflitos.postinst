@@ -48,4 +48,24 @@ cat > /etc/dconf/db/local.d/locks/00-epiphany-user-agent <<EOF
 /org/gnome/epiphany/web/user-agent
 EOF
 
+# Evitar consultas a filtros do Epiphany e habilitar popups
+cat > /etc/dconf/db/local.d/00-epiphany-filters-popups <<EOF
+[org/gnome/epiphany/web]
+enable-adblock=false
+enable-itp=false
+enable-popups=true
+EOF
+
+# Configura página inicial do Epiphany
+cat > /etc/dconf/db/local.d/90-browserurl <<EOF
+[org/gnome/epiphany]
+homepage-url='https://maratona.sbc.org.br/'
+EOF
+
+# Bloquear a modificação a nível de sistema do URL da página inicial do Epiphany
+cat > /etc/dconf/db/local.d/locks/90-browserurl <<EOF
+# prevent changes to epiphany's homepage
+/org/gnome/epiphany/homepage-url
+EOF
+
 dconf update
