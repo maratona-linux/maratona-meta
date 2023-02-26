@@ -1,3 +1,9 @@
+maratona-meta (20230226) jammy; urgency=medium
+
+  * Modify epiphany settings and drop custom .desktop
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Sun, 26 Feb 2023 15:54:58 -0300
+
 maratona-meta (20230113) jammy; urgency=medium
 
   * Update copyright's years
