@@ -59,7 +59,7 @@ EOF
 # Configura página inicial do Epiphany
 cat > /etc/dconf/db/local.d/90-browserurl <<EOF
 [org/gnome/epiphany]
-homepage-url='https://maratona.sbc.org.br/'
+homepage-url='https://nutellaboot.naquadah.com.br/'
 EOF
 
 # Bloquear a modificação a nível de sistema do URL da página inicial do Epiphany
