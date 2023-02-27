@@ -13,7 +13,7 @@ fi
 
 # A pasta db e onde a configuracao e feita de fato
 mkdir -p /etc/dconf/db/gdm.d/
-cat <<EOF > /etc/dconf/db/gdm.d/00-login-screen
+cat <<EOF > /etc/dconf/db/gdm.d/90-login-screen
 [org/gnome/login-screen]
 # Para nao mostrar a lista de usuarios
 disable-user-list=true
@@ -36,20 +36,20 @@ end-system-uids=2000
 EOF
 
 # Definir um valor padrão para o user-agent do epiphany
-cat > /etc/dconf/db/local.d/00-epiphany-user-agent <<EOF
+cat > /etc/dconf/db/local.d/90-epiphany-user-agent <<EOF
 [org/gnome/epiphany/web]
 user-agent='Mozilla/5.0 (Maratona Linux) Epiphany/42.1'
 EOF
 
 # Bloquear a modificação a nível de sistema do user-agent epiphany
 mkdir -p /etc/dconf/db/local.d/locks
-cat > /etc/dconf/db/local.d/locks/00-epiphany-user-agent <<EOF
+cat > /etc/dconf/db/local.d/locks/90-epiphany-user-agent <<EOF
 # prevent changes to epiphany's user-agent
 /org/gnome/epiphany/web/user-agent
 EOF
 
 # Evitar consultas a filtros do Epiphany e habilitar popups
-cat > /etc/dconf/db/local.d/00-epiphany-filters-popups <<EOF
+cat > /etc/dconf/db/local.d/90-epiphany-filters-popups <<EOF
 [org/gnome/epiphany/web]
 enable-adblock=false
 enable-itp=false
@@ -69,13 +69,13 @@ cat > /etc/dconf/db/local.d/locks/90-browserurl <<EOF
 EOF
 
 # Configura restauração de sessão somente em caso de travamento
-cat > /etc/dconf/db/local.d/00-epiphany-session-restoration-policy <<EOF
+cat > /etc/dconf/db/local.d/90-epiphany-session-restoration-policy <<EOF
 [org/gnome/epiphany]
 restore-session-policy='crashed'
 EOF
 
 # Bloquear a modificação a nível de sistema da política de restauração de sessão
-cat > /etc/dconf/db/local.d/locks/00-epiphany-session-restoration-policy <<EOF
+cat > /etc/dconf/db/local.d/locks/90-epiphany-session-restoration-policy <<EOF
 # prevent changes to epiphany's session restoration policy
 /org/gnome/epiphany/restore-session-policy
 EOF
