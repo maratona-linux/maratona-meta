@@ -74,4 +74,10 @@ cat > /etc/dconf/db/local.d/00-epiphany-session-restoration-policy <<EOF
 restore-session-policy='crashed'
 EOF
 
+# Bloquear a modificação a nível de sistema da política de restauração de sessão
+cat > /etc/dconf/db/local.d/locks/00-epiphany-session-restoration-policy <<EOF
+# prevent changes to epiphany's session restoration policy
+/org/gnome/epiphany/restore-session-policy
+EOF
+
 dconf update
