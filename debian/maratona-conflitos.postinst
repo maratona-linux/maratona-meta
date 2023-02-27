@@ -68,4 +68,10 @@ cat > /etc/dconf/db/local.d/locks/90-browserurl <<EOF
 /org/gnome/epiphany/homepage-url
 EOF
 
+# Configura restauração de sessão somente em caso de travamento
+cat > /etc/dconf/db/local.d/00-epiphany-session-restoration-policy <<EOF
+[org/gnome/epiphany]
+restore-session-policy='crashed'
+EOF
+
 dconf update
