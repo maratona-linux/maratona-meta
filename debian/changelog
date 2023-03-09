@@ -1,3 +1,66 @@
+maratona-meta (20230227) jammy; urgency=medium
+
+  * Modify epiphany session restoration policy
+  * Lock modifications to the session restoration
+  * Increase keyfile priority
+  * Change epiphany default homepage to nutellaboot
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Mon, 27 Feb 2023 16:20:37 -0300
+
+maratona-meta (20230226) jammy; urgency=medium
+
+  * Modify epiphany settings and drop custom .desktop
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Sun, 26 Feb 2023 15:54:58 -0300
+
+maratona-meta (20230113) jammy; urgency=medium
+
+  * Update copyright's years
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Sat, 14 Jan 2023 00:16:41 -0300
+
+maratona-meta (20220830) jammy; urgency=medium
+
+  [ Bruno Ribas ]
+  * maratona-usuario-icpc.service: BEFORE gdm.service unit
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Tue, 30 Aug 2022 22:27:07 -0300
+
+maratona-meta (20220627) jammy; urgency=medium
+
+  * Define and lock epiphany's user-agent
+  * Make maratona-usuario-icpc an independent package
+  * Make flatpak script depend on ca-certificates
+  * Emancipate maratona-flatpak-common
+  * Remove remainders from maratona-usuario-icpc
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Mon, 27 Jun 2022 22:34:46 -0300
+
+maratona-meta (20220531) jammy; urgency=medium
+
+  * Fix broken shortcuts and start-up experience
+    - depend on dbus-x11
+    - update the values configured for the trusted metadata
+    - fix mixed indentation and repeated code
+  * Fix shellcheck warnings
+  * Replace firefox with epiphany-browser (GNOME Web)
+    - depend on epiphany-browser instead of firefox
+    - remove references to firefox
+    - add epiphany-browser to the favorites
+    - add a modified .desktop file pointing epiphany-web to the BOCA URL
+  * Restore conflict with snapd
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Wed, 01 Jun 2022 19:56:44 -0300
+
+maratona-meta (20220517) jammy; urgency=medium
+
+  * Bump debhelper compat from 12 to 13
+  * Update copyright years
+  * Drop conflict with snapd
+  * Release 20220517
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Thu, 19 May 2022 17:19:30 -0300
+
 maratona-meta (20210517.4) focal; urgency=medium
 
   * Add conflict with snapd

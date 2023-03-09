@@ -2,7 +2,7 @@ Source: maratona-meta
 Section: metapackages
 Priority: optional
 Maintainer: Bruno César Ribas <bruno.ribas@unb.br>
-Build-Depends: debhelper-compat (= 12)
+Build-Depends: debhelper-compat (= 13)
 Vcs-Git: https://github.com/maratona-linux/maratona-meta.git
 Vcs-Browser: https://github.com/maratona-linux/maratona-meta
 
@@ -10,7 +10,7 @@ Package: maratona-desktop
 Architecture: all
 Recommends: maratona-desktop-latam, maratona-submission
 Pre-Depends: maratona-essential
-Depends: ssh, firefox, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, dconf-cli
+Depends: ssh, epiphany-browser, maratona-conflitos, maratona-background, maratona-usuario-icpc, maratona-firewall, dconf-cli
 Provides: maratona-linux-gconf-user-profile
 Description: Pacote Virtual que transforma o Ubuntu em Maratona Linux
  Este pacote detém todas as dependências obrigatórias para transformar o
@@ -36,6 +36,9 @@ Description: Pacote do Maratona com restrições para o ambiente
  pacotes snap no sistema ocorrerá somente se houver a opção `purge` no momento
  da instalação do maratona-conflitos ou de algum pacote que dependa dele, como
  o maratona-desktop.
+ .
+ No Ubuntu 22.04, desinstalar o snapd completamente causa a remoção do
+ firefox, da loja GNOME e da loja Snap.
 
 Package: maratona-essential
 Architecture: all
@@ -45,19 +48,6 @@ Description: Pacote Virtual com as dependências mínimas para o ambiente marato
  documentação que podem ser utilizados na maratona.
  .
  É um pacote seguro para se instalar em qualquer ambiente Ubuntu e Debian.
-
-Package: maratona-usuario-icpc
-Pre-Depends: maratona-linguagens-doc, makepasswd, maratona-vscode-extensions
-Depends: slay
-Conflicts: maratona-skel
-Architecture: all
-Description: Pacote que cria um usuário icpc para o competidor da maratona
- Este pacote cria o usuário sem privilégios administrativos para competição.
- .
- Também é fornecido neste pacote alguns comandos admnistrativos:
-   - zera-home-icpc : Apaga todos os arquivos do home do usuário icpc
-      + este script é utilizado após o warmup para o home do usuário
-      iniciar vazio durante a competição.
 
 Package: maratona-desktop-latam
 Architecture: all
@@ -73,12 +63,3 @@ Depends: tasksel
 Description: Pacote que adiciona o maratona-desktop à lista de tasks do tasksel
  Este pacote instala uma task que instala o pacote maratona-desktop com
  dependência no pacote ubuntu-desktop-minimal.
-
-Package: maratona-flatpak-common
-Architecture: all
-Depends: flatpak
-Description: Pacote Virtual com a função de instalação flatpak do Maratona Linux
- Este pacote instala o flatpak e scripts usados pelo Maratona Linux para
- instalar programas empacotados nesse formato.
-
-
