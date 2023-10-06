@@ -1,3 +1,9 @@
+maratona-meta (20231006) jammy; urgency=medium
+
+  * Add maratona-fancy-tools as a dependency of maratona-desktop
+
+ -- Davi Antônio da Silva Santos <antoniossdavi@gmail.com>  Fri, 06 Oct 2023 19:55:04 -0300
+
 maratona-meta (20230227) jammy; urgency=medium
 
   * Modify epiphany session restoration policy
